@@ -9,6 +9,7 @@ vc=(m1*v1+m2*v2)/(m1+m2);
 %质心系中的速度
 vr1=v1-vc;
 vr2=v2-vc;
+%计算关于碰撞平面的反射
 vr11=reflection(vr1,A);
 vr22=reflection(vr2,A);
 %原参考系中的速度
