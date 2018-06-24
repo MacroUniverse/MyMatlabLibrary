@@ -1,4 +1,4 @@
-﻿%text的自定义函数
+%text的自定义函数
 %Text(D,StringCell....)     size(D)=[N,2];
 %Text(P, StringCell....)    size(P)=[N,3];
 %numel(StringCell)=N;

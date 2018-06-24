@@ -1,4 +1,4 @@
-﻿%scatter的自定义函数
+%scatter的自定义函数
 %size(D)=[N,2];
 function h=Scatter(D,varargin)
 X=D(:,1); Y=D(:,2);

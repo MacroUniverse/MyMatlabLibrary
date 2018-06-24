@@ -1,4 +1,4 @@
-﻿%fill的自定义形式
+%fill的自定义形式
 %size(P)=[N,2];
 function h=Fill(P,varargin)
 X=P(:,1); Y=P(:,2); 

@@ -1,4 +1,4 @@
-﻿%已知下一次碰撞需要的时间是Tremain. 序号是NextCollision.
+%已知下一次碰撞需要的时间是Tremain. 序号是NextCollision.
 %更新所有球的P,V和v.
 P=P+V*Tremain;
 [V(P(NextCollision(1))),V(P(NextCollision(1)))]=.....

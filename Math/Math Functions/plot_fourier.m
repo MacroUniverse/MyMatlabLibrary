@@ -16,7 +16,7 @@ figure;plot(x,y); grid on;
 axis([-2*pi,2*pi,0,1.1]);
 end
 
-function y=f(x,n_max)%ÇóÒ»¸öÖµ
+function y=f(x,n_max)%æ±‚ä¸€ä¸ªå€¼
 y = coefficient(0)/2;
 for n=1:n_max
     [an,bn]=coefficient(n);

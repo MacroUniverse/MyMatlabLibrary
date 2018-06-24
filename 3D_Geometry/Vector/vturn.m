@@ -1,4 +1,4 @@
-﻿%语法1: V1=vturn(V,D1,D2)
+%语法1: V1=vturn(V,D1,D2)
 %把空间矢量由D1方向绕原点转到D2方向
 
 %语法2: V1=turn(V,A,theta)

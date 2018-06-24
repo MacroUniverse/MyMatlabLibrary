@@ -1,4 +1,4 @@
-﻿%求平面两射线的交点
+%求平面两射线的交点
 %平面射线的格式是l=[m, n,theta]; 其中[m,n]是平面直角坐标, theta是与x轴的夹角
 %size(l1)=size(l2)=[N,3];
 function [p,badmark]=l22p(l1,l2)

@@ -1,4 +1,4 @@
-﻿%plot3的自定义形式
+%plot3的自定义形式
 %size(P)=[N,3];
 function h=Plot3(P,varargin)
 

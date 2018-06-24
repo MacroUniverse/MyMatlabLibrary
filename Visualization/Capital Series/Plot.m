@@ -1,4 +1,4 @@
-﻿%plot的自定义形式
+%plot的自定义形式
 %size(D)=[N,2];
 function h=Plot(D,varargin)
 X=D(:,1); Y=D(:,2);

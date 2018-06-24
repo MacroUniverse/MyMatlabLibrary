@@ -1,4 +1,4 @@
-﻿%把长方体空间划分成许多格子, 把空间点P划分到这些格子里面.
+%把长方体空间划分成许多格子, 把空间点P划分到这些格子里面.
 %size(P)=[N,3]
 %position就是[Xmin,Xmax,Ymin,Ymax,Zmin,Zmax]
 %N就是[Nx,Ny,Nz].

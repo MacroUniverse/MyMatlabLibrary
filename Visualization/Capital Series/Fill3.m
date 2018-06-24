@@ -1,4 +1,4 @@
-﻿%fill3的自定义形式
+%fill3的自定义形式
 %size(P)=[N,3];
 function h=Fill3(P,varargin)
 

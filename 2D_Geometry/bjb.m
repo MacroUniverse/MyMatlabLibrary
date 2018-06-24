@@ -1,4 +1,4 @@
-﻿%已知边角边, 解三角形
+%已知边角边, 解三角形
 function [j2,b3,j3]=bjb(b1,j1,b2)
 if ~(b1>0 && b2>0 && j1>0)
     warning('no single solution');

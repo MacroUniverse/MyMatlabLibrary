@@ -1,4 +1,4 @@
-﻿%平面两点决定平面射线
+%平面两点决定平面射线
 %size(p1)=size(p2)=[N,2]; size(l)=[N,3];
 function l=p22l(p1,p2)
 N=size(p1,1);

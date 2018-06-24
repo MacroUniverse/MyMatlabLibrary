@@ -1,4 +1,4 @@
-﻿%sym solve pmd
+%sym solve pmd
 %目前最满意的全解方法, 但耗时多
 
 function P=sympmd(pmd0)

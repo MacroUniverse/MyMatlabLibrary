@@ -1,4 +1,4 @@
-﻿%格式(flag=0)
+%格式(flag=0)
 %[x1,y1,z1]=turn(x,y,z,A,theta)  把空间点绕原点以A方向为轴逆时针转动theta角
 %[x1,y1,z1]=turn(x,y,z,D1,D2)  把空间点由D1方向绕原点转到D2方向
 %    numel(x)=numel(y)=numel(z)

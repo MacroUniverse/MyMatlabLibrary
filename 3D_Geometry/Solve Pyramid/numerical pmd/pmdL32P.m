@@ -1,4 +1,4 @@
-﻿function P=pmdL32P(L1,L2,L3,P1,P2,P3)
+function P=pmdL32P(L1,L2,L3,P1,P2,P3)
 
 P12=P2-P1; mag=vmag(P12);
 C1=(L1^2+mag^2-L2^2)/(2*L1*mag);%C1=cos<P1P,P1P2>

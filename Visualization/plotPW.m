@@ -1,4 +1,4 @@
-﻿%分段函数画图
+%分段函数画图
 %Nplot是描点的个数, 如果使用flag, 个数加倍
 %FunCell 是函数句柄的1*n元胞, partition是1*(n+1)向量, 一一对应
 %flag可选, 如果flag='odd',画奇函数. flag='even',画偶函数. 此时partition(1)必须为0.

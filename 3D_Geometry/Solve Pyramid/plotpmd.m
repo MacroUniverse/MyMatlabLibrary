@@ -1,4 +1,4 @@
-﻿%画pmd调试
+%画pmd调试
 %先准备好P,pmd0
 
 setfigure 3D; axis off

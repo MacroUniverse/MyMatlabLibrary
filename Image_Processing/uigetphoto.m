@@ -1,4 +1,4 @@
-﻿%通过windows文件窗口选择图片, 并把选中的图片读入元胞数组I
+%通过windows文件窗口选择图片, 并把选中的图片读入元胞数组I
 
 function [I,name,pathname]=uigetphoto
 

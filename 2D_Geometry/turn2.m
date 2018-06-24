@@ -1,4 +1,4 @@
-﻿%平面上的点逆时针旋转theta角
+%平面上的点逆时针旋转theta角
 function [x1,y1]=turn2(x,y,theta)
 
 x1=zeros(size(x));

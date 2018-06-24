@@ -1,4 +1,4 @@
-﻿%以相片矩阵的Ind或Sub为坐标的plot函数
+%以相片矩阵的Ind或Sub为坐标的plot函数
 %程序从当前的图片对象中提取矩阵尺寸
 %格式
 % photoPlot(Ind)

@@ -1,4 +1,4 @@
-﻿%bound_debug
+%bound_debug
 close all;
 
 %Square Well

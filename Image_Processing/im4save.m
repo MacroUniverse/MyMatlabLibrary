@@ -1,4 +1,4 @@
-﻿%把4维矩阵按照bmp格式储存在当前路径
+%把4维矩阵按照bmp格式储存在当前路径
 %filename是4Dmat文件的文件名
 
 function im4save(filename)

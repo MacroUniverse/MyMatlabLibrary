@@ -1,4 +1,4 @@
-﻿% 势能是对称的C1*f1+C2*f2是[0,a]区间的通解, C3*g是区间
+% 势能是对称的C1*f1+C2*f2是[0,a]区间的通解, C3*g是区间
 % f1(x,E);f2(x,E);g(x,E)都是以能量为参数的波函数, 
 % a是边界
 function [E,C]=QMBoundState(f1,f2,a,g,E_range,E_resolution)

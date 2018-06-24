@@ -17,7 +17,6 @@ kb=1.380650324e-23;                  % Boltzmann constant
 u= 1.660539040e-27;                  % atomic mass unit
 a0=5.2917721067e-11;                 % Bohr radius
 
-
 % Mathematical Constants
 E=exp(1);                            % base of the natural logarithm
 
@@ -27,4 +26,19 @@ inch=2.54e-2; % length
 gauss=1e-4;   % electric field
 mile=6.09e+2; % length
 lb=0.454; pound=0.454; % mass
- 
+
+% atomic units conversion
+
+au_x = 5.2917721067e-11;
+au_t = 2.418884326e-17;
+au_E = 4.3597446499e-18;
+au_Ef = 5.1422067070e11;
+
+
+
+
+
+
+
+
+

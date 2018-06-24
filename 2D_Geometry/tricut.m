@@ -1,4 +1,4 @@
-﻿%大三角形截成n^2个小三角形
+%大三角形截成n^2个小三角形
 
 function [i,j]=tricut(n)
 i=zeros(3,n^2); j=i;

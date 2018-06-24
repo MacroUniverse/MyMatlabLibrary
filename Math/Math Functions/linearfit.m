@@ -1,4 +1,4 @@
-﻿%最小二乘法线性拟合, 计算误差
+%最小二乘法线性拟合, 计算误差
 %根据KSU教材error analysis 编写
 
 function [k,b,Sigma_y,Sigma_k,Sigma_b]=linearfit(x,y)

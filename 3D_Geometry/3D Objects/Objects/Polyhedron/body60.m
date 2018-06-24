@@ -1,4 +1,4 @@
-﻿function [Pa,Pb,Pc,Pd,Pe,Pf,Pg,Ph,flat5,flat6]=body60(RorHorL,draw)
+function [Pa,Pb,Pc,Pd,Pe,Pf,Pg,Ph,flat5,flat6]=body60(RorHorL,draw)
 
 %生成平面上的五边形
 R=1/2/sin(36/180*pi);
