@@ -16,8 +16,10 @@ if size(x, 1) == 1
                 y = [zeros(1, Ndiff+1), x, zeros(1, Ndiff)];
             end
         end
-    else % shrink
+    elseif newN < N % shrink
         y = shrink(x, N, Ndiff);
+    else
+        y = x;
     end
 
 % === x is column vector ===
@@ -36,8 +38,10 @@ elseif size(x, 2) == 1
                 y = [zeros(Ndiff+1, 1); x; zeros(Ndiff, 1)];
             end
         end
-    else % shrink
+    elseif newN < N % shrink
         y = shrink(x, N, Ndiff);
+    else
+        y = x;
     end
 
 % === x is matrix ===
@@ -56,7 +60,7 @@ else
                 y = [zeros(Ndiff+1, Ncol); x; zeros(Ndiff, Ncol)];
             end
         end
-    else % shrink
+    elseif newN < N % shrink
         if mod(Ndiff,2) == 0
             Ndiff = 0.5*Ndiff;
             y = x(Ndiff+1:end-Ndiff, :);
@@ -68,6 +72,8 @@ else
                 y = x(Ndiff+1:end-Ndiff-1, :);
             end
         end
+    else
+        y = x;
     end
 end
 end
