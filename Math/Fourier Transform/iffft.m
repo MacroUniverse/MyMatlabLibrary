@@ -1,26 +1,26 @@
 % inverse free fast fourier transform
-% equivalent to g(j) = sum(f.*exp(1i*k_j*f))/N;
-% x and k must be linspaced and increasing
-% Nk is optional, Nk > numel(x)
-function [g, k] = iffft(f, x, k0, Nk)
-    Nx = numel(x); dx = (x(end)-x(1))/(Nx-1);
-    if nargin < 4, Nk = Nx;
-    elseif (Nk < Nx), error('Nk < Nx not allowed!');
+% equivalent to f(j) = sum(g.*exp(1i*k_j*k))/N;
+% k and x must be linspaced and increasing
+% Nx is optional, Nx > numel(k)
+function [f, x] = iffft(g, k, x0, Nx)
+    Nk = numel(k); dk = (k(end)-k(1))/(Nk-1);
+    if nargin < 4, Nx = Nk;
+    elseif (Nx < Nk), error('Nx < Nk not allowed!');
     end
-    if k0 == 0
-        g = siffts(fftresize(f, Nk));
+    if x0 == 0
+        f = siffts(fftresize(g, Nx));
     else
-        g = siffts(fftresize(f.*exp((1i*k0)*x), Nk));
+        f = siffts(fftresize(g.*exp((1i*x0)*k), Nx));
     end
-    if mod(Nx, 2) == 0
-        x0 = x(0.5*Nx+1);
+    if mod(Nk, 2) == 0
+        k0 = k(0.5*Nk+1);
     else
-        x0 = x(0.5*(Nx+1));
+        k0 = k(0.5*(Nk+1));
     end
-    if x0 ~= 0
-        k = fftlinspace(2*pi/dx, Nk, k0);
-        g = g.*exp((1i*x0)*(k-k0));
+    if k0 ~= 0
+        x = fftlinspace(2*pi/dk, Nx, x0);
+        f = f.*exp((1i*k0)*(x-x0));
     elseif nargout == 2
-        k = fftlinspace(2*pi/dx, Nk, k0);
+        x = fftlinspace(2*pi/dk, Nx, x0);
     end
 end
