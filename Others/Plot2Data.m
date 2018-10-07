@@ -39,7 +39,6 @@ while 1
         break;
     end
 end
-
 x = (P(:,1)-P0(1))/(Px(1)-P0(1));
 y = (P(:,2)-P0(2))/(Py(2)-P0(2));
 end
