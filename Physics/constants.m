@@ -29,16 +29,11 @@ lb=0.454; pound=0.454; % mass
 
 % atomic units conversion
 
-au_x = 5.2917721067e-11;
-au_t = 2.418884326e-17;
-au_E = 4.3597446499e-18;
-au_Ef = 5.1422067070e11;
+au_x = 5.2917721067e-11;  % 1 a.u. distance
+au_t = 2.418884326e-17;   % 1 a.u. time
+au_E = 4.3597446499e-18;  % 1 a.u. energy
+au_Ef = 5.1422067070e11;  % 1 a.u. electric field
 
-
-
-
-
-
-
-
-
+% intensity (W/cm^2) TO electric field (a.u.)
+w_cm2_TO_au_Ef = @(x)5.338026811839179e-09*sqrt(x);
+au_Ef_TO_w_cm2 = @(x) (x/5.338026811839179e-09).^2;
