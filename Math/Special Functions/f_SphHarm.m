@@ -16,7 +16,7 @@ if Nth == 1
         for kk = 1:Nm
             Y = SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
             for ii = 1:Nr
-                f(ii,:) = f(ii,:) + f_R(ii) * Y;
+                f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y;
             end
         end
     end
@@ -26,7 +26,7 @@ elseif Nph == 1
         for kk = 1:Nm
             Y = SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
             for ii = 1:Nr
-                f(ii,:) = f(ii,:) + f_R(ii) * Y;
+                f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y;
             end
         end
     end
