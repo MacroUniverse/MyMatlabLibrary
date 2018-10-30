@@ -13,22 +13,24 @@ Nl = numel(l); Nm = numel(m);
 if Nth == 1
     [R,Ph] = ndgrid(r,ph); Th = th*ones(Nr,Nph); f = zeros(Nr,Nph);
     for jj = 1:Nl
-        for kk = 1:Nm
-            Y = SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
-            for ii = 1:Nr
-                f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y;
-            end
+    for kk = 1:Nm
+        if abs(m(kk)) > l(jj), continue; end
+        Y_lm = SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
+        for ii = 1:Nr
+            f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y_lm;
         end
+    end
     end
 elseif Nph == 1
     [R,Th] = ndgrid(r,th); Ph = ph*ones(Nr,Nth); f = zeros(Nr,Nth);
     for jj = 1:Nl
-        for kk = 1:Nm
-            Y = SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
-            for ii = 1:Nr
-                f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y;
-            end
+    for kk = 1:Nm
+        if abs(m(kk)) > l(jj), continue; end
+        Y_lm = SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
+        for ii = 1:Nr
+            f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y_lm;
         end
+    end
     end
 else
     error('"th" or "ph" must be scalar!');
