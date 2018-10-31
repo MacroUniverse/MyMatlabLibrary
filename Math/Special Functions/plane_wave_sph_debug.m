@@ -3,7 +3,7 @@ close all;
 rmax = 2*pi;
 r = linspace(0.01,rmax,1000);
 l = 0:20; m = -20:20;
-k = 1; th = pi/2; ph = pi/2;
+k = 1; th = pi/2; ph = pi/9;
 f_R = plane_wave_sph(r,l,m,k,th,ph);
 
 

@@ -15,10 +15,7 @@ if Nth == 1
     for jj = 1:Nl
     for kk = 1:Nm
         if abs(m(kk)) > l(jj), continue; end
-        Y_lm = SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
-        for ii = 1:Nr
-            f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y_lm;
-        end
+        f = f + f_R(:,jj,kk) .* SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
     end
     end
 elseif Nph == 1
@@ -26,10 +23,7 @@ elseif Nph == 1
     for jj = 1:Nl
     for kk = 1:Nm
         if abs(m(kk)) > l(jj), continue; end
-        Y_lm = SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
-        for ii = 1:Nr
-            f(ii,:) = f(ii,:) + f_R(ii,jj,kk) * Y_lm;
-        end
+        f = f + f_R(:,jj,kk) .* SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
     end
     end
 else

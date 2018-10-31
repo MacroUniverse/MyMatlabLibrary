@@ -1,4 +1,9 @@
-% find unscaled radial function for a plane wave
+% find unscaled radial function for a plane wave "exp(\I\vec k\vdot\vec r)"
+% 'r', 'l', 'm' are vectors, 'k', 'th', 'ph' are scalars
+% 'r' is radial grid, 'l', 'm' are indices for spherical harmonics
+% 'k' is the wave number (can be any real number)
+% 'th','ph' are polar angles 'theta' and 'phi'
+
 function f_R = plane_wave_sph(r,l,m,k,th,ph)
 r = r(:);
 Nr = numel(r); Nl = numel(l); Nm = numel(m);
