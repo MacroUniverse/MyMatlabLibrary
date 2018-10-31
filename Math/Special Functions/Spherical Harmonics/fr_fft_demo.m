@@ -1,6 +1,8 @@
 % fft_sph debug
 
-%% create 3D gaussian wave
+%% 3D gaussian
+
+% create 3D gaussian wave
 close all;
 rmax = 6; Nr = 400; % radial grid
 l = 0:14; m = -14:14; % as in Y_lm
@@ -45,3 +47,24 @@ figure; plot(k, abs(spec)); title('momentum spectrum');
 sigmap = 0.5/sigma;
 g = exp(-(k-k0).^2/(2*sigmap)^2)/(2*pi*sigmap^2)^0.75;
 hold on; plot(k,g,'.');
+
+%% hydrogen ground state
+
+rmax = 10;
+r = linspace(1e-6,rmax,1000);
+fr = cell(1,1);
+fr{1,1} = 2*exp(-r);
+l = 0; m = 0;
+[f, R, Th, Ph] = fr_eval(fr, l, m, r, pi/2, ph1);
+surfSph(R,Th,Ph,abs(f));
+shading interp; axis equal; view(51,19);
+xlabel x; ylabel y; zlabel z;
+axis([-rmax,rmax,-rmax,rmax]);
+k = linspace(-4, 4, 200);
+
+g = fr_fft(r,fr,l,m,k,0,0);
+figure; plot(k,abs(g),'.'); hold on;
+
+% analytical spectrum
+g1 = 2*sqrt(2)./(pi*(k.^2+1).^2);
+plot(k, g1);
