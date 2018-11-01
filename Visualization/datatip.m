@@ -24,5 +24,18 @@ mark = mark & event_obj.Target.YData(:) == pos(2);
 if length(pos) > 2
     mark = mark & event_obj.Target.ZData(:) == pos(3);
 end
-output_txt{end+1} = ['C: ', num2str(event_obj.Target.CData(mark),precision)];
+
+if isequal(class(event_obj.Target), 'matlab.graphics.chart.primitive.Surface')
+    output_txt{end+1} = ['C: ', num2str(event_obj.Target.CData(mark),precision)];
+end
+
+ind = find(mark);
+
+if length(pos) > 2
+    [sub1,sub2,sub3] = ind2sub(size(event_obj.Target.XData),ind);
+    output_txt{end+1} = ['ind: ', num2str(sub1), ', ', num2str(sub2), ', ', num2str(sub3)];
+else
+    [sub1,sub2] = ind2sub(size(event_obj.Target.XData),ind);
+    output_txt{end+1} = ['ind: ', num2str(sub1), ', ', num2str(sub2)];
+end
 end

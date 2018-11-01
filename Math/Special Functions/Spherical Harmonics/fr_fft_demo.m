@@ -36,7 +36,7 @@ figure(1); surfSph(R,Th,Ph,abs(f)); shading interp;
 figure(2); surfSph(R,Th,Ph,angle(f)); shading interp;
 
 % wave function norm
-disp('norm2 = '); disp(fr_norm2(r, fr));
+disp('norm2 = '); disp(fr_norm2(fr,r));
 
 % numerical spectrum
 k = linspace(k0-3,k0+3,50);
@@ -51,18 +51,18 @@ hold on; plot(k,g,'.');
 %% hydrogen ground state
 
 rmax = 10;
-r = linspace(1e-6,rmax,1000);
+r = linspace(0.096,rmax,1000);
 fr = cell(1,1);
-fr{1,1} = 2*exp(-r);
+fr{1,1} = 2*exp(-r).*r.^scaled;
 l = 0; m = 0;
-[f, R, Th, Ph] = fr_eval(fr, l, m, r, pi/2, ph1);
+[f, R, Th, Ph] = fr_eval(fr, l, m, r, pi/2, ph1, scaled);
 surfSph(R,Th,Ph,abs(f));
-shading interp; axis equal; view(51,19);
+shading interp; axis equal; view(0,90);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
 k = linspace(-4, 4, 200);
 
-g = fr_fft(r,fr,l,m,k,0,0);
+g = fr_fft(r,fr,l,m,k,0,0,scaled);
 figure; plot(k,abs(g),'.'); hold on;
 
 % analytical spectrum
