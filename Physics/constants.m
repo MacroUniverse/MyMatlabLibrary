@@ -36,4 +36,4 @@ au_Ef = 5.1422067070e11;  % 1 a.u. electric field
 
 % intensity (W/cm^2) TO electric field (a.u.)
 w_cm2_TO_au_Ef = @(x)5.338026811839179e-09*sqrt(x);
-au_Ef_TO_w_cm2 = @(x) (x/5.338026811839179e-09).^2;
+au_Ef_TO_w_cm2 = @(x) 3.509445467042176e+16*x.^2;

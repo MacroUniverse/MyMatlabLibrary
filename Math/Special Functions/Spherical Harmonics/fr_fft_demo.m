@@ -56,7 +56,7 @@ fr = cell(1,1);
 fr{1,1} = 2*exp(-r).*r.^scaled;
 l = 0; m = 0;
 [f, R, Th, Ph] = fr_eval(fr, l, m, r, pi/2, ph1, scaled);
-surfSph(R,Th,Ph,abs(f));
+figure; surfSph(R,Th,Ph,abs(f));
 shading interp; axis equal; view(0,90);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
