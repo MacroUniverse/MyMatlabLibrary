@@ -12,12 +12,12 @@ th1 = linspace(-pi,pi,200);
 [f, R, Th, Ph] = fr_eval(fr, l, m, r, th1, ph, scaled);
 figure(1); grid on; hold on;
 surfSph(R,Th,Ph,real(f));
-shading interp; axis equal; view(63,35);
+view(63,35);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
 figure(2); grid on; hold on;
 surfSph(R,Th,Ph,imag(f));
-shading interp; axis equal; view(63,35);
+view(63,35);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
 
@@ -25,11 +25,10 @@ axis([-rmax,rmax,-rmax,rmax]);
 ph1 = linspace(0,2*pi,200);
 [f, R, Th, Ph] = fr_eval(fr, l, m, r, th, ph1, scaled);
 figure(1); surfSph(R,Th,Ph,real(f));
-shading interp; axis equal; view(63,35);
+view(63,35);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
 figure(2); surfSph(R,Th,Ph,imag(f));
-shading interp; axis equal; view(63,35);
+view(63,35);
 xlabel x; ylabel y; zlabel z;
 axis([-rmax,rmax,-rmax,rmax]);
-

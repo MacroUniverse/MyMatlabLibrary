@@ -4,6 +4,6 @@
 function h = surfSph(R,Th,Ph,varargin)
 [X,Y,Z] = sph2cart(Ph,pi/2-Th,R);
 h = surf(X,Y,Z,varargin{:});
+shading interp; axis equal;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
 end
-
