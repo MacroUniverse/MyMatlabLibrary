@@ -1,22 +1,33 @@
 % find fourier transform of an "fr" function along one direction
-% 'k' can be a vector
-% 'scaled' is 'true' for scaled 'fr', default is 'false'
-% '(th,ph)' is direction of k, must be scalars
+% 'k' (k >= 0) can be a vector
+% 'scaled' is optional, default is 'false' (unscaled radial function)
+% all vectors must be row vectors
 
-function spec = fr_fft(r, fr, l, m, k, th, ph, scaled)
-if nargin < 8, scaled = false; end
+function fk = fr_fft(fr, r, l, m, k, scaled)
+if ~exist('scaled','var') || isempty(scaled), scaled = false; end
 if scaled, w = r; else, w = r.^2; end
-Nl = numel(l); Nm = numel(m); Nk = numel(k);
-spec = zeros(1,Nk);
+Nl = numel(l); Nm = numel(m); Nr = numel(r); Nk = numel(k);
+fk = cell(Nl,Nm);
+j_l = zeros(Nk, Nr);
+A_l = zeros(1, Nk);
+
+% calculate unscaled fk
 for jj = 1:Nl
-for kk = 1:Nm
-    if isempty(fr{jj,kk}), continue; end
-    const = sqrt(2/pi)*1i^(-l(jj))*SphHarm(l(jj),m(kk),th,ph);
     for ii = 1:Nk
-        if k(ii) < 0, const1 = const*(-1)^l(jj); else, const1 = const; end
-        spec(ii) = spec(ii) + const1 *....
-        trapz(r, fr{jj,kk}.*sbesselj(l(jj), abs(k(ii))*r).*w);
+        A_l(ii) = sqrt(2/pi)*1i^(-l(jj));
+        j_l(ii,:) = sbesselj(l(jj),k(ii)*r);
+    end
+    for kk = 1:Nm
+        if abs(m(kk)) > l(jj), continue; end
+        fk{jj,kk} = zeros(1,Nk);
+        for ii = 1:Nk
+            fk{jj,kk}(ii) = A_l(ii)*trapz(r,fr{jj,kk}.*j_l(ii,:).*w);
+        end
     end
 end
+
+% scaled fk
+if scaled
+    fk = fr_mul(fk,k);
 end
 end

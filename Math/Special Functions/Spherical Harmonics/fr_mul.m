@@ -1,5 +1,6 @@
 % multiply an "fr" function by a scalar or vector (radial function)
 % 'v' can also be another "fr" function
+
 function fr = fr_mul(fr, v)
 [Nl,Nm] = size(fr);
 if ~iscell(v)

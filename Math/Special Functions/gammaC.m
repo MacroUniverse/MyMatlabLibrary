@@ -1,4 +1,4 @@
-function [f] = gammaC(z)
+function f = gammaC(z)
 % GAMMA  Gamma function valid in the entire complex plane.
 %        Accuracy is 15 significant digits along the real axis
 %        and 13 significant digits elsewhere.
@@ -32,8 +32,6 @@ function [f] = gammaC(z)
 siz = size(z);
 z=z(:);
 zz=z;
-
-f = 0.*z; % reserve space in advance
 
 p=find(real(z)<0);
 if ~isempty(p)

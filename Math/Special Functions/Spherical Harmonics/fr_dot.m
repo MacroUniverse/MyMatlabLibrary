@@ -43,4 +43,3 @@ else % scaled
 end
 out = sum(each(:));
 end
-

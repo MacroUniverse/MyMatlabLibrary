@@ -4,6 +4,8 @@
 function dpdr = fr_dpdr(fr,r,scaled)
 [Nl, Nm] = size(fr);
 dpdr = zeros(size(r));
+
+% scaled
 for ii = 1:Nl
 for jj = 1:Nm
     if ~isempty(fr{ii,jj})
