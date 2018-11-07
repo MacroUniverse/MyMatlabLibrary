@@ -2,14 +2,22 @@
 close all;
 
 %% scaled, asymptotic 'sin(x ...)'
-rmax = 10; Nr = 300; k = 1;
+rmax = 10; Nr = 300; k = 1.5;
 r = linspace(0, rmax, Nr);
 figure; hold on;
 title(['coulomb functions, Z = -1, k = ', num2str(k)]);
 
+tic;
 for l = 0:3
     plot(r, coulomb1(l,k,r));
 end
+toc;
+
+tic;
+for l = 0:3
+    plot(r, coulomb1_ode(l,k,r),'.');
+end
+toc;
 
 %% unscaled, asymptotic 'sin(x ...)/x'
 rmax = 10; Nr = 300; k = 1;
