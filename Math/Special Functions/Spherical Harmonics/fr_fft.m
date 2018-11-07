@@ -18,7 +18,7 @@ for jj = 1:Nl
         j_l(ii,:) = sbesselj(l(jj),k(ii)*r);
     end
     for kk = 1:Nm
-        if abs(m(kk)) > l(jj), continue; end
+        if isempty(fr{jj,kk}), continue; end
         fk{jj,kk} = zeros(1,Nk);
         for ii = 1:Nk
             fk{jj,kk}(ii) = A_l(ii)*trapz(r,fr{jj,kk}.*j_l(ii,:).*w);

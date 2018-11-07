@@ -18,7 +18,7 @@ if Nth == 1
     [R,Th,Ph] = sph_wrap(R,Th,Ph);
     for jj = 1:Nl
     for kk = 1:Nm
-        if abs(m(kk)) > l(jj), continue; end
+        if isempty(fr{jj,kk}), continue; end
         F = F + fr{jj,kk}(:) .* SphHarm(l(jj),m(kk),th*ones(1,Nph),ph);
     end
     end
@@ -27,7 +27,7 @@ elseif Nph == 1
     [R,Th,Ph] = sph_wrap(R,Th,Ph);
     for jj = 1:Nl
     for kk = 1:Nm
-        if abs(m(kk)) > l(jj), continue; end
+        if isempty(fr{jj,kk}), continue; end
         F = F + fr{jj,kk}(:) .* SphHarm(l(jj),m(kk),th,ph*ones(1,Nth));
     end
     end

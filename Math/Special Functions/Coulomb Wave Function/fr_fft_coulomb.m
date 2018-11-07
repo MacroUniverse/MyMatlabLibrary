@@ -17,11 +17,11 @@ A_l = zeros(1, Nk);
 for jj = 1:Nl
     for ii = 1:Nk
         ph_l = angle(gammaC(l(jj)+1+1i*Z/k(ii)));
-        A_l(ii) = sqrt(2/pi)*1i^(-l)*exp(-Sign*1i*ph_l);
+        A_l(ii) = sqrt(2/pi)*1i^(-l(jj))*exp(-Sign*1i*ph_l);
         F_l(ii,:) = coulomb1(l(jj),k(ii),r);
     end
     for kk = 1:Nm
-        if abs(m(kk)) > l(kk), continue; end
+        if isempty(fr{jj,kk}), continue; end
         fk{jj,kk} = zeros(1,Nk);
         for ii = 1:Nk
             if scaled
