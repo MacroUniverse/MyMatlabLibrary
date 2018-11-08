@@ -7,6 +7,7 @@
 % this function is about 20 times faster, with about 4 digits precision
 
 function F = coulomb1_ode(l,k,r)
+warning('this code is bad, use "coulomb1()" or "coulomb_mex()" instead');
 Z = -1; eta2 = 2*(Z/k); llp1 = l*(l+1);
 if any(r < 0), error('r must be >= 0 !'); end
 rmin = min(r(:)); rmax = max(r(:));

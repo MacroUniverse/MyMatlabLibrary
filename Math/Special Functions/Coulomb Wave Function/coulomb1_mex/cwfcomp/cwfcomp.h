@@ -10,9 +10,8 @@
 namespace cwfcomp {
 using namespace std;
 
-// ===========================  set precision here  =============================
+// don't change, already most accurate
 const double precision = 1E-10, sqrt_precision = 1E-5;
-// ==============================================================================
 
 class ODE_integration
 {
