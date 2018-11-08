@@ -8,11 +8,12 @@
 % https://en.wikipedia.org/wiki/Coulomb_wave_function
 % http://mathworld.wolfram.com/CoulombWaveFunction.html
 
-function F = coulomb1(l,k,r,scaled)
-if nargin < 4, scaled = true; end
+function F = coulomb1(l,k,r,Z,scaled)
+if ~exist('scaled','var') || isempty(scaled), scaled = true; end
+if ~exist('Z','var') || isempty(Z), Z = -1; end
 if k < 0.0023, error('k must >= 0.0023 !'); end
 if any(r<0), error('r must >= 0 !'); end
-Z = -1; eta = Z/k;
+eta = Z/k;
 rho = k*r;
 
 % calculate scaled
