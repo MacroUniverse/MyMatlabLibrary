@@ -28,17 +28,18 @@ public:
 		const double l = inputs[0][0];
 		const double k = inputs[1][0];
 		
-		Coulomb_wave_functions f(true, l, Z/k);
 		Comp F, dF;
         TypedArray<double> r = std::move(inputs[2]);
 
 		if (scaled) // scaled wave function (default)
 			for (auto& r1 : r) {
+				Coulomb_wave_functions f(true, l, Z/k);
 				f.F_dF(k*r1, F, dF);
 				r1 = real(F);
 			}
 		else // unscaled wave function
 			for (auto& r1 : r) {
+				Coulomb_wave_functions f(true, l, Z/k);
 				f.F_dF(k*r1, F, dF);
 				if (abs(r1) > 2e-16)
 					r1 = real(F)/r1;

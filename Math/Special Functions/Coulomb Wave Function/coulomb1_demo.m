@@ -2,8 +2,8 @@
 close all;
 
 %% scaled, asymptotic 'sin(x ...)'
-rmin = 0; rmax = 10; Nr = 500; k = 2; precision = 16;
-l = 0; Nl = numel(l);
+rmin = 10; rmax = 20; Nr = 500; k = 2; precision = 16;
+l = 0:40; Nl = numel(l);
 %r = rand(1,Nr)*(rmax-rmin)+rmin;
 r = linspace(rmin,rmax,Nr);
 figure; hold on;
@@ -11,7 +11,7 @@ title(['coulomb functions, Z = -1, k = ', num2str(k)]);
 
 tic;
 for ii = 1:Nl
-    F = coulomb1_sym(l(ii),k,r,-1);
+    F = coulomb1(l(ii),k,r,-1);
     F1 = coulomb1_mex(l(ii),k,r,-1);
     plot(r, F1-F);
 end
