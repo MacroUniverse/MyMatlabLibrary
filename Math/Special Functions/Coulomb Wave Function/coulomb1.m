@@ -25,6 +25,5 @@ else
     % calculate scaled
     F = C*k*rho.^l.*exp(-1i*rho).*hypergeom(l+1-1i*eta,2*l+2,2i*rho);
 end
-
-
+F = real(F);
 end

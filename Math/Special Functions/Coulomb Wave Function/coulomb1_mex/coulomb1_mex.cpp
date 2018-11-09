@@ -56,6 +56,8 @@ public:
         // Get array factory
         ArrayFactory factory;
 
+		scaled = true; Z = -1.; // default
+
 		if (inputs.size() < 3) {
             matlabPtr->feval(u"error",
                 0,
@@ -64,13 +66,9 @@ public:
 
 		if (inputs.size() == 4 && inputs[3].getNumberOfElements() > 0)
 			Z = inputs[3][0];
-		else
-			Z = -1.;
 
 		if (inputs.size() == 5 && inputs[4].getNumberOfElements() > 0)
 			scaled = inputs[4][0];
-		else
-			scaled = true;
 
         // Check first input argument
         if (!(inputs[0].getType() == ArrayType::DOUBLE ||
