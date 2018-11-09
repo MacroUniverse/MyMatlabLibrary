@@ -1,23 +1,25 @@
 % demonstration of fr_coulomb() function
+close all;
+
 
 %% spherical coordinates
-
+scaled = false;
 l = 0:30;
 m = 0;
 rmax = 10; Nr = 100;
 r = linspace(0,rmax,Nr);
 k = 1;
 k_th = 0; k_ph = 0;
-fr1 = fr_coulomb(l,m,r,k,k_th,k_ph,-1,false);
+fr1 = fr_coulomb(l,m,r,k,k_th,k_ph,-1,scaled);
 
 th = linspace(0,2*pi,400);
-[f1, R, Th, Ph] = fr_eval(fr1,l,m,r,th,false);
+[f1, R, Th, Ph] = fr_eval(fr1,l,m,r,th,scaled);
 figure; surfSph(R,Th,Ph,abs(f1));
-view(0,0);
+view(0,0); caxis([0,0.16]);
 
 figure; surfSph(R,Th,Ph,angle(f1));
 xlabel x; ylabel y; zlabel z;
-view(0,0); caxis([0,0.16]);
+view(0,0);
 
 
 %% cartesian coordinates
@@ -34,3 +36,9 @@ shading interp;
 xlabel x; ylabel y; zlabel z;
 axis equal; axis([xmin,xmax,-1,1,zmin,zmax]);
 view(0,0); caxis([0,0.16]);
+
+figure; surfCart(X,Y,Z,angle(Psi));
+shading interp;
+xlabel x; ylabel y; zlabel z;
+axis equal; axis([xmin,xmax,-1,1,zmin,zmax]);
+view(0,0);

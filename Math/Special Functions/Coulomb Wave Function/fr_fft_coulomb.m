@@ -18,7 +18,7 @@ for jj = 1:Nl
     for ii = 1:Nk
         ph_l = angle(gammaC(l(jj)+1+1i*Z/k(ii)));
         A_l(ii) = sqrt(2/pi)*1i^(-l(jj))*exp(-Sign*1i*ph_l);
-        F_l(ii,:) = coulomb1_mex_tested(l(jj),k(ii),r);
+        F_l(ii,:) = coulomb1_mex(l(jj),k(ii),r,Z,scaled);
     end
     for kk = 1:Nm
         if isempty(fr{jj,kk}), continue; end

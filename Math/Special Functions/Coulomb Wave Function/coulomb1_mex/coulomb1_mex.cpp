@@ -15,7 +15,7 @@
 #include "SLISC/coulomb.h"
 
 using slisc::Comp;
-using slisc::coulomb1;
+using slisc::coulombF; using slisc::coulombDF;
 using std::to_string; using std::string; using std::abs;
 using namespace matlab::data;
 using matlab::mex::ArgumentList;
@@ -34,10 +34,15 @@ public:
 
 		if (scaled) // scaled wave function (default)
 			for (auto& r1 : r)
-				r1 = coulomb1(l, k, r1, Z);
+				r1 = coulombF(l, k, r1, Z);
 		else // unscaled wave function
 			for (auto& r1 : r) {
-				r1 = -100.; // TODO : not implemented yet !
+				if (abs(r1) > 2e-16)
+					r1 = coulombF(l, k, r1, Z)/r1;
+				else if (abs(l) < 2e-16)
+					r1 = k*coulombDF(l, k, 0., Z); // L'Hospital rule
+				else
+					r1 = 0.;
 			}
         outputs[0] = r;
     }

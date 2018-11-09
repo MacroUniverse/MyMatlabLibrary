@@ -15,7 +15,7 @@ for jj = 1:Nl
     for kk = 1:Nm
         a_klm = sqrt(2/pi)*1i^(l(jj))/k*exp(Sign*1i*ph_l)....
                 *conj(SphHarm(l(jj),m(kk),k_th,k_ph));
-        fr{jj,kk} = a_klm*coulomb1_mex_tested(l(jj),k,r,scaled);
+        fr{jj,kk} = a_klm*coulomb1_mex(l(jj),k,r,Z,scaled);
     end
 end
 end
