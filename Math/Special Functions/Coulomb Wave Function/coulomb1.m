@@ -9,8 +9,8 @@
 % http://mathworld.wolfram.com/CoulombWaveFunction.html
 
 function F = coulomb1(l,k,r,Z,scaled)
-if ~exist('scaled','var') || isempty(scaled), scaled = true; end
 if ~exist('Z','var') || isempty(Z), Z = -1; end
+if ~exist('scaled','var') || isempty(scaled), scaled = true; end
 if k < 0.0023, error('k must >= 0.0023 !'); end
 if any(r<0), error('r must >= 0 !'); end
 eta = Z/k;
