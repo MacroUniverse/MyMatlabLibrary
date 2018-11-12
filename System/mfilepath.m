@@ -6,5 +6,8 @@ function [path, name] = mfilepath
 s = dbstack(1,'-completenames');
 path = s(1).file;
 name = s(1).name;
-path = [strrep(fileparts(path),'\','/'),'/'];
+if isequal(name, 'LiveEditorEvaluationHelperESectionEval')
+    path = './'; name = ''; return
+end
+path = strrep(path, ['/', name, '.m'], '/');
 end
