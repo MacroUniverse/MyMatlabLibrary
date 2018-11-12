@@ -2,6 +2,7 @@
 % 'scaled' is 'true' by default, asymptotic form is 'sin(kr + ...)'
 % 'l','k' are scalars, 'r' is a vector
 % "r >= 0" and "k > 0.0023" is required.
+% efficiency : 4e-3 [s/eval]
 % TODO: fix this! At least support k = 0.
 % TODO: not sure if k < 0 works.
 % see PhysWiki for detail
@@ -14,7 +15,7 @@ if ~exist('scaled','var') || isempty(scaled), scaled = true; end
 
 eta = Z/k; rho = k*r;
 C = (-0.5i)^(l+1)*2^l*....
-    exp(-pi*eta*0.5)*abs(gammasym(l+1+1i*eta))/factorial(2*l+1);
+    exp(-pi*eta*0.5)*abs(gamma_sym(l+1+1i*eta))/factorial(2*l+1);
 
 % C is 0 or finite
 if ~(isnan(C) || isinf(C) || C == 0)

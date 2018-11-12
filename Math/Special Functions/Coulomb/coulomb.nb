@@ -1,0 +1,137 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4015,        129]
+NotebookOptionsPosition[      3597,        110]
+NotebookOutlinePosition[      3972,        126]
+CellTagsIndexPosition[      3929,        123]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"l", " ", "=", " ", "0"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7505508321918106`*^9, 3.750550883420778*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"x", "^", 
+    RowBox[{"(", 
+     RowBox[{"L", "+", "1"}], ")"}]}], "*", 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{"-", "I"}], "*", "x"}], "]"}], "*", 
+   RowBox[{"Hypergeometric1F1", "[", 
+    RowBox[{
+     RowBox[{"L", "+", "1", "-", 
+      RowBox[{"I", "*", "eta"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"2", "*", "L"}], "+", "2"}], ",", " ", 
+     RowBox[{"2", "*", "I", "*", "x"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.750550495177199*^9, 3.7505505706858406`*^9}, {
+   3.7505506406164775`*^9, 3.750550643812415*^9}, {3.7505506954619627`*^9, 
+   3.750550738079325*^9}, 3.7505507685663443`*^9, {3.750554473518738*^9, 
+   3.7505544822355103`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.7505507284154987`*^9, {3.7505507999830694`*^9, 3.7505508140162706`*^9}, {
+   3.7505539452485294`*^9, 3.750553967547539*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "x"}]], " ", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", "L"}], ")"}], " ", 
+   SuperscriptBox["x", "L"], " ", 
+   RowBox[{"Hypergeometric1F1", "[", 
+    RowBox[{
+     RowBox[{"1", "-", 
+      RowBox[{"\[ImaginaryI]", " ", "eta"}], "+", "L"}], ",", 
+     RowBox[{"2", "+", 
+      RowBox[{"2", " ", "L"}]}], ",", 
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]}], "]"}]}], "-", 
+  RowBox[{"\[ImaginaryI]", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], " ", "x"}]], " ", 
+   SuperscriptBox["x", 
+    RowBox[{"1", "+", "L"}]], " ", 
+   RowBox[{"Hypergeometric1F1", "[", 
+    RowBox[{
+     RowBox[{"1", "-", 
+      RowBox[{"\[ImaginaryI]", " ", "eta"}], "+", "L"}], ",", 
+     RowBox[{"2", "+", 
+      RowBox[{"2", " ", "L"}]}], ",", 
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]}], "]"}]}], "+", 
+  FractionBox[
+   RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "x"}]], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"\[ImaginaryI]", " ", "eta"}], "+", "L"}], ")"}], " ", 
+    SuperscriptBox["x", 
+     RowBox[{"1", "+", "L"}]], " ", 
+    RowBox[{"Hypergeometric1F1", "[", 
+     RowBox[{
+      RowBox[{"2", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "eta"}], "+", "L"}], ",", 
+      RowBox[{"3", "+", 
+       RowBox[{"2", " ", "L"}]}], ",", 
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]}], "]"}]}], 
+   RowBox[{"2", "+", 
+    RowBox[{"2", " ", "L"}]}]]}]], "Output",
+ CellChangeTimes->{
+  3.750550729133584*^9, {3.750550796478603*^9, 3.7505508859519978`*^9}, {
+   3.750553946927992*^9, 3.7505539784969654`*^9}, 3.7505544977394333`*^9}]
+}, Open  ]]
+},
+WindowSize->{1368, 829},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 145, 3, 36, "Input"],
+Cell[706, 25, 766, 20, 36, "Input"],
+Cell[CellGroupData[{
+Cell[1497, 49, 255, 6, 36, "Input"],
+Cell[1755, 57, 1826, 50, 122, "Output"]
+}, Open  ]]
+}
+]
+*)
+
