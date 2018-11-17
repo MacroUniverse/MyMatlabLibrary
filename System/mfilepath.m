@@ -7,7 +7,7 @@ function [path, name] = mfilepath
 s = dbstack(1,'-completenames');
 if ~isempty(s)
     path = s(1).file;
-    [~, name] = fileparts(path);
+    [path, name] = fileparts(path);
     if ~isequal(name, 'LiveEditorEvaluationHelperESectionEval')
         path = strrep(path, '\', '/');
         path = [path '/'];
