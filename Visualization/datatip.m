@@ -25,7 +25,8 @@ if length(pos) > 2
     mark = mark & event_obj.Target.ZData(:) == pos(3);
 end
 
-if isequal(class(event_obj.Target), 'matlab.graphics.chart.primitive.Surface')
+if isequal(class(event_obj.Target), 'matlab.graphics.chart.primitive.Surface').....
+   || isequal(class(event_obj.Target), 'matlab.graphics.chart.primitive.Scatter')
     output_txt{end+1} = ['C: ', num2str(event_obj.Target.CData(mark),precision)];
 end
 
