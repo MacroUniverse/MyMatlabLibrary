@@ -9,7 +9,7 @@ if ~exist('size','var')
     axis square;
     h = gca;
     h.Units = 'pixels';
-    size = min(h.Position(3)/(Nx+1), h.Position(4)/(Ny+1));
+    size = 0.95*min(h.Position(3)/(Nx+1), h.Position(4)/(Ny+1));
 end
 [X,Y] = ndgrid(x,y);
 % the size here is actually the area in pixels

@@ -9,6 +9,14 @@ else
 end
 
 if nargout == 2
-    k = fftlinspace(2*pi/dx, size(f,dim));
+    if nargin < 3
+        if isvector(f)
+            k = fftlinspace(2*pi/dx, numel(f));
+        else
+            k = fftlinspace(2*pi/dx, size(f,1));
+        end
+    else
+        k = fftlinspace(2*pi/dx, size(f,dim));
+    end
 end
 end
