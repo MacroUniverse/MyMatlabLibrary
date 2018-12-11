@@ -10,7 +10,7 @@ function fk = fr_fft_coulomb(fr, r, l, m, k, Sign, scaled, range)
 if ~exist('scaled','var') || isempty(scaled), scaled = false; end
 if ~exist('range','var') || isempty(range), range = nan; end
 if ~isnan(range)
-    ind1 = lookup(r, range(1))+1; ind2 = lookup(r, range(2));
+    ind1 = lookupR(r, range(1), true); ind2 = lookupL(r, range(2), true);
     if (ind2 - ind1 < 20), error('less than 20 points in range!'); end
     r = r(ind1:ind2); Nr = numel(r);
 else
