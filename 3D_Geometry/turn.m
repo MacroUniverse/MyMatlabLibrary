@@ -54,16 +54,16 @@ C1*Az*Ax-Ay*S   C1*Az*Ay+Ax*S  C1*Az*Az+C
 XYZ1=M*[x(:)';y(:)';z(:)'];
 
 if flag==0 %原格式
-x1=zeros(size(x));
-y1=zeros(size(y));
-z1=zeros(size(z));
+    x1=zeros(size(x));
+    y1=zeros(size(y));
+    z1=zeros(size(z));
 
-x1(:)=XYZ1(1,:);
-y1(:)=XYZ1(2,:);
-z1(:)=XYZ1(3,:);
+    x1(:)=XYZ1(1,:);
+    y1(:)=XYZ1(2,:);
+    z1(:)=XYZ1(3,:);
 else  %新格式
-   x1=XYZ1';
-   y1=[]; z1=[];
+    x1=XYZ1';
+    y1=[]; z1=[];
 end
 
 end
