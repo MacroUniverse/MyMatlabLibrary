@@ -4,6 +4,7 @@
 % coulombH- = conj(coulombH+) is trivial
 
 function H = coulombHp_sym(l,eta,rho)
+sigma = angle(gamma_sym(l + 1 + 1i*eta)); % coulomb phase shift
 C = (-1i)^l*exp(pi*eta*0.5 + 1i*sigma);
 
 % C is 0 or finite
