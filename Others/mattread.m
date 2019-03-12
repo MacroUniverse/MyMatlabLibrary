@@ -24,12 +24,12 @@ for ii = 1:nvar
         matsize = data(ind : ind+ndim-1)';
         ind = ind + ndim;
     end
-    if matclass == 0 || matclass == 1
+    if matclass >= 20 && matclass < 60 % floating point types
         A = zeros(matsize);
-    elseif matclass == 2
-        A = int32(zeros(matsize));
-    elseif matclass == 3
-        A = uint8(zeros(matsize));
+    elseif matclass >= 0 && matclass < 20 % integral types
+        A = zeros(matsize);
+    else
+        error('unknown data type');
     end
     matnumel = prod(matsize);
     A(:) = data(ind:ind+matnumel-1);

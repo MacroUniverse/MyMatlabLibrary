@@ -18,7 +18,7 @@ scatter(X(:),Y(:),size*size,C(:),...
     'MarkerEdgeColor','none');
 h.Units = 'normalized';
 Dx = (x(end)-x(1))/(Nx-1);
-Dy = (y(end)-y(1))/(Ny-1);
+Dy = (y(end)-y(1))/(Ny-1); if isnan(Dy), Dy = 1; end
 axis([x(1)-Dx, x(end)+Dx, y(1)-Dy, y(end)+Dy]);
 view(90,90);
 colorbar;
