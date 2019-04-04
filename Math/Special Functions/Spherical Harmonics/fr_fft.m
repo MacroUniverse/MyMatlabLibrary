@@ -1,5 +1,6 @@
-% find fourier transform of an "fr" function along one direction
-% 'k' (k >= 0) can be a vector
+% find 3D fourier transform of an "fr" function
+% the result will also be in the form of "fr" function
+% 'k' (k >= 0) is a vector, the radial grid for 'fk'
 % 'scaled' is optional, default is 'false' (unscaled radial function)
 % all vectors must be row vectors
 % 'range' is optional, 'range(1) and range(2)' set the radial range for fft

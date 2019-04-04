@@ -22,7 +22,3 @@ fk = fr_fft_coulomb(fr,r,l,m,k,-1,scaled);
 [spec,k1] = fr_eval1(fk,l,m,k,0.1,0.3,scaled);
 figure; title('Hydrogen 1s coulomb spectrum'); hold on;
 plot(k1, abs(spec),'.'); hold on; % should be zero
-
-% analytical spectrum
-% g1 = 2*sqrt(2)./(pi*(k1.^2+1).^2);
-% plot(k1, g1);
