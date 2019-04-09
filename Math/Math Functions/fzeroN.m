@@ -8,7 +8,7 @@ function roots = fzeroN(fun,interval,resolution)
 x=linspace(interval(1),interval(end), resolution);
 y=arrayfun(fun,x);
 figure; plot(x,y,'+-')
-title('the function to be found zeros of')
+title('the function to be found zeros of');
 Sign=sign(y);
 ind=find(Sign(1:end-1).*Sign(2:end)<0);
 
