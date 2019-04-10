@@ -9,12 +9,18 @@ function [Eng, X, Psi] = bound_shooting(V, xmin, xmid, xmax, mass, ...
 
 % find the zeros in Psi(x_max) vs E plot
 trial_fun = @(E) bound_shooting_trial(E, V, xmin, xmid, xmax, mass, odeOpt);
-Eng = fzeroN(trial_fun, Espan, EResolution, true);
+Eng = fzeroN(trial_fun, Espan, EResolution);
 
-% output and plot.
+% output, check nodes
 NE = numel(Eng);
 X = cell(1,NE); Psi = X;
 for ii = 1:numel(Eng)
     [~, X{ii}, Psi{ii}] = trial_fun(Eng(ii));
+    if numzero(Psi{ii}) > ii - 1
+        warning(['missed bound state ', num2str(ii),...
+            ', increase Eresolution!']);
+    elseif numzero(Psi{ii}) < ii - 1
+        error('duplicate bound state found!');
+    end
 end
 end

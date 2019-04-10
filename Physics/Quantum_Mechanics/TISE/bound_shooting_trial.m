@@ -1,13 +1,14 @@
 % output matching error determined by Wronskian
 % [psi_left, psi_left', psi_right; psi_right']
 % at xmid, psi normalized to max(psi) = 1
-function [err, x, psi] = bound_shooting_trial(E, V, xmin, xmid, xmax, mass, odeOpt)
+function [err, x, psi, th1, th2] = bound_shooting_trial(E, V, xmin, xmid, xmax, ...
+    mass, odeOpt)
 dy = 1e-16; % dy is psi(xmin) and psi(xmax)
 [x1, Y1] = bound_shooting_left(E, V, [xmin,xmid], mass, dy, odeOpt);
 [x2, Y2] = bound_shooting_right(E, V, [xmax,xmid], mass, dy, odeOpt);
 
 % error
-err = fmatch_err(Y1(end,1),Y1(end,2),Y2(end,1),Y2(end,2));
+[err, th1, th2] = fmatch_err(Y1(end,1),Y1(end,2),Y2(end,1),Y2(end,2));
 
 psi1_max = max(abs(Y1(:,1)));
 psi2_max = max(abs(Y2(:,1)));
@@ -40,6 +41,7 @@ function [x, Y] = bound_shooting_left(E, V, xspan, mass, dy, odeOpt)
 if V(xspan(1)) > E
     Y0 = [1; sqrt(2*mass*(V(xspan(1)) - E))] * dy;
 else
+    warning('shooting starts from classically allowed region, are you sure?');
     Y0 = [0; 1];
 end
 odefun = @(x,Y) TISE_odefun(x,Y,E,V,mass);
@@ -47,9 +49,10 @@ odefun = @(x,Y) TISE_odefun(x,Y,E,V,mass);
 end
 
 function [x, Y] = bound_shooting_right(E, V, xspan, mass, dy, odeOpt)
-if V(xspan(2)) > E
-    Y0 = [1; -sqrt(2*mass*(V(xspan(2)) - E))] * dy;
+if V(xspan(1)) > E
+    Y0 = [1; -sqrt(2*mass*(V(xspan(1)) - E))] * dy;
 else
+    warning('shooting starts from classically allowed region, are you sure?');
     Y0 = [0; 1];
 end
 odefun = @(x,Y) TISE_odefun(x,Y,E,V,mass);
