@@ -9,16 +9,12 @@ function [Eng, X, Psi] = bound_shooting(V, xmin, xmid, xmax, mass, ...
 
 % find the zeros in Psi(x_max) vs E plot
 trial_fun = @(E) bound_shooting_trial(E, V, xmin, xmid, xmax, mass, odeOpt);
-Eng = fzeroN(trial_fun, Espan, EResolution,0.01);
+Eng = fzeroN(trial_fun, Espan, EResolution, true);
 
 % output and plot.
 NE = numel(Eng);
 X = cell(1,NE); Psi = X;
 for ii = 1:numel(Eng)
-    [err, X{ii}, Psi{ii}] = trial_fun(Eng(ii));
-    if (err > 1e-3)
-        disp('bound state: '); disp(ii); disp('err ='); disp(err);
-        error('something went wrong!');
-    end
+    [~, X{ii}, Psi{ii}] = trial_fun(Eng(ii));
 end
 end

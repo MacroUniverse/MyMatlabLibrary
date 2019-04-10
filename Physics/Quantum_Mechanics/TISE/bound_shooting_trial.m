@@ -47,8 +47,8 @@ odefun = @(x,Y) TISE_odefun(x,Y,E,V,mass);
 end
 
 function [x, Y] = bound_shooting_right(E, V, xspan, mass, dy, odeOpt)
-if V(xspan(1)) > E
-    Y0 = [1; -sqrt(2*mass*(V(xspan(1)) - E))] * dy;
+if V(xspan(2)) > E
+    Y0 = [1; -sqrt(2*mass*(V(xspan(2)) - E))] * dy;
 else
     Y0 = [0; 1];
 end
