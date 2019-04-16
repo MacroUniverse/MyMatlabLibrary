@@ -5,15 +5,14 @@
 % psi(:,i) is the wave function of Eng(i)
 % output Y = [psi(x); psi'(x)]
 function [Eng, X, Psi] = bound_shooting(V, xmin, xmid, xmax, mass, ...
-    Espan, EResolution, odeOpt)
+    Espan, EResolution, odeOpt, plot)
 
 % find the zeros in Psi(x_max) vs E plot
 trial_fun = @(E) bound_shooting_trial(E, V, xmin, xmid, xmax, mass, odeOpt);
 Eng = fzeroN(trial_fun, Espan, EResolution);
 
 % output, check nodes
-NE = numel(Eng);
-X = cell(1,NE); Psi = X;
+X = cell(1,numel(Eng)); Psi = X;
 for ii = 1:numel(Eng)
     [~, X{ii}, Psi{ii}] = trial_fun(Eng(ii));
     if numzero(Psi{ii}) > ii - 1
@@ -21,6 +20,17 @@ for ii = 1:numel(Eng)
             ', increase Eresolution!']);
     elseif numzero(Psi{ii}) < ii - 1
         error('duplicate bound state found!');
+    end
+    
+    if plot
+        x = X{ii}; psi = Psi{ii};
+        figure; plot(x,psi); axis([x(1),x(end),-1.2,1.2]);
+        hold on;
+        xlabel('x'); ylabel('\psi(x)');
+        Nzeros = numzero(psi);
+        title(['i = ', num2str(ii),...
+            ', E_{', num2str(Nzeros+1), '} = ',  num2str(Eng(ii))]);
+        scatter(xmid,0);
     end
 end
 end

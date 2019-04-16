@@ -62,6 +62,6 @@ end
 % ode function
 % if Y = [psi(x); psi'(x)] is known, find dY(x) = [psi'(x), psi''(x)];
 function dY =TISE_odefun(x,Y,E,V,mass)
-dY(2,1) = - 2*mass*(E-V(x))*Y(1);
+dY(2,1) = 2*mass*(V(x)-E)*Y(1);
 dY(1) = Y(2);
 end
