@@ -7,16 +7,7 @@ function [U, m1, L] = CGtable(l1, l2, M)
 if l1 < 0 || l2 < 0 || abs(M) > l1 + l2
     error('illegal input!');
 end
-if abs(M) > abs(l1-l2)
-    Ndim = l1+l2-abs(M)+1;
-else
-    Ndim = 2*min(l1,l2)+1;
-end
-if M >= l1 - l2
-    m1max = l1;
-else
-    m1max = l2+M;
-end
+[Ndim, m1max] = CGtableDim(l1, l2, M);
 m1 = m1max:-1:(m1max-Ndim+1);
 m2 = M - m1;
 L = (l1+l2):-1:(l1+l2-Ndim+1);
