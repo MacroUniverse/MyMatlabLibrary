@@ -52,4 +52,9 @@ k = kmin:kmax;
 terms = (-1).^k ./(factorial(k).*factorial(l1+l2-L-k).*factorial(l1-m1-k).*factorial(l2+m2-k).*...
     factorial(L-l2+m1+k).*factorial(L-l1-m2+k));
 coeff = C0.*sum(terms);
+
+% if abs(double(coeff)) < eps
+%     warning('found a zero coefficient not excluded by selection rules!');
+%     disp([l1, m1, l2, m2, L, M]);
+% end
 end
