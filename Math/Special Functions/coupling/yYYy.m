@@ -19,37 +19,31 @@ m2_ = M_-m1_;
 
 for i = Ndim:-1:1
     for i_ = Ndim_:-1:1
-        terms(i,i_) = term_fun(l1,l2,m1(i),m2(i),L,M,...
-            l,m, l1_,l2_,m1_(i_),m2_(i_),L_,M_);
+        terms(i,i_) = term_fun(l1,m1(i),l2,m2(i),L,M,...
+            l,m, l1_,m1_(i_),l2_,m2_(i_),L_,M_);
     end
 end
 out = (2*l+1)/(4*pi) * sum(terms(:));
 end
 
-function out = term_fun(l1,l2,m1,m2,L,M,l,m,l1_,l2_,m1_,m2_,L_,M_)
+function out = term_fun(l1,m1,l2,m2,L,M,l,m,l1_,m1_,l2_,m2_,L_,M_)
 out = ThreeJ(l1,0,l,0,l1_,0);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * ThreeJ(l1,-m1,l,-m,l1_,m1_);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * ThreeJ(l2,0,l,0,l2_,0);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * ThreeJ(l2,-m2,l,m,l2_,m2_);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * CG(l1,m1,l2,m2,L,M);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * CG(l1_,m1_,l2_,m2_,L_,M_);
-if abs(double(out)) < eps
-    out = 0; return;
-end
+if abs(double(out)) < eps, out = 0; return; end
+
 out = out * (-1)^(m1+m2+m)*sqrt((2*l1+1)*(2*l1_+1)*(2*l2+1)*(2*l2_+1));
 end

@@ -3,7 +3,8 @@
 
 function h = surfCart(X,Y,Z,varargin)
 h = surf(X,Y,Z,varargin{:});
-shading interp; axis equal;
+shading flat; axis equal;
+view(90,90);
 xlabel x; ylabel y; zlabel z;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
 end

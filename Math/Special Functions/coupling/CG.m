@@ -4,6 +4,10 @@
 % unitary matrix should be all positive
 % input can be either numeric or symbolic
 
+% function coeff = CG(l1,m1,l2,m2,L,M)
+% coeff = clebschgordan(l1,m1,l2,m2,L,M);
+% end
+
 function coeff = CG(l1,m1,l2,m2,L,M)
 % check legal input
 if ~is_all_int(2*[l1,m2,l2,m2])
