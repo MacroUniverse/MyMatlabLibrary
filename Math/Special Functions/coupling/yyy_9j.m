@@ -1,5 +1,5 @@
 % <y_{l1,l2,L,M}|y_{l,l,0,0}|y_{l1_,l2_,L_,M_}>
-function out = yyy_Aihua(l1,l2,L,M,l,l1_,l2_,L_,M_)
+function out = yyy_9j(l1,l2,L,M,l,l1_,l2_,L_,M_)
 if L ~= L_ || M ~= M_
     out = 0; return;
 end

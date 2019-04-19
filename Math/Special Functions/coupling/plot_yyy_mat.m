@@ -1,4 +1,6 @@
+% calculate <y|y_{ll}^{00}|y'>
 close all;
+
 % === params ===
 L_max = 2; M_max = 2;
 l1_max = 3; l2_max = 3;
@@ -11,9 +13,8 @@ disp([(1:Ndim)',L, M, l1, l2, parity, exclude]);
 
 mat = cell(lmax+1,lmax+1);
 Mat = cell(lmax+1,0);
-Mat_Aihua = cell(lmax+1,0);
+Mat_9j = cell(lmax+1,0);
 
-% calculate
 for l = 0:lmax
     m = 0;
     mat{l+1,m+l+1} = yYYy_mat(l,m,L,M,l1,l2);
@@ -22,8 +23,8 @@ for l = 0:lmax
         mat{l+1,m+l+1} = yYYy_mat(l,m,L,M,l1,l2);
         Mat{l+1} = Mat{l+1} + mat{l+1,m+l+1} + mat{l+1,m+l+1}';
     end
-    Mat_Aihua{l+1} = yyy_mat_Aihua(l,L,M,l1,l2);
-    Mat_Aihua{l+1} = Mat_Aihua{l+1}/((-1)^l/sqrt(2*l+1));
+    Mat{l+1} = Mat{l+1} * (-1)^l/sqrt(2*l+1);
+    Mat_9j{l+1} = yyy_mat_9j(l,L,M,l1,l2);
 end
 
 % plot Mat
@@ -34,7 +35,7 @@ for l = 0:lmax
     %squares(x,y,abs(Mat{l+1}));
     surfCart(X,Y,abs(Mat{l+1})); shading faceted;
     axis equal; title(['l = ', num2str(l),...
-        '  err =', num2str(max(max(abs(Mat{l+1} - Mat_Aihua{l+1}))))]);
+        '  err =', num2str(max(max(abs(Mat{l+1} - Mat_9j{l+1}))))]);
     colorbar; hold on;
     
     % plot dividers for L
