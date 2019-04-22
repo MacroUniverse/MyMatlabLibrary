@@ -5,13 +5,13 @@ if L ~= L_ || M ~= M_
 end
 
 out = CG(l,0,l1_,0,l1,0);
-if abs(double(out)) < eps, out = 0; return; end
+if CG_check_0(out), out = 0; return; end
 
 out = out * CG(l,0,l2_,0,l2,0);
-if abs(double(out)) < eps, out = 0; return; end
+if CG_check_0(out), out = 0; return; end
 
 out = out * w9j(l,l1_,l1,l,l2_,l2,0,L_,L);
-if abs(double(out)) < eps, out = 0; return; end
+if CG_check_0(out), out = 0; return; end
 
 out = out * (2*l+1)/(4*pi)*sqrt((2*l1_+1)*(2*l2_+1)*(2*L_+1));
 end

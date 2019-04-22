@@ -57,7 +57,7 @@ terms = (-1).^k ./(factorial(k).*factorial(l1+l2-L-k).*factorial(l1-m1-k).*facto
     factorial(L-l2+m1+k).*factorial(L-l1-m2+k));
 coeff = C0.*sum(terms);
 
-% if abs(double(coeff)) < eps
+% if CG_check_0(coeff)
 %     warning('found a zero coefficient not excluded by selection rules!');
 %     disp([l1, m1, l2, m2, L, M]);
 % end
