@@ -4,6 +4,7 @@
 % x, y are ascending vectors, C is Nx-by-Ny matrix
 % size is optional
 function squares(x, y, C, size)
+warning('consider using surfCart() instead');
 Nx = numel(x); Ny = numel(y);
 if ~exist('size','var')
     axis square;

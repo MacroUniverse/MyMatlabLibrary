@@ -1,7 +1,12 @@
 % my version of surf()
 % X, Y, Z are 2D matrices
+% the color of each facet is determined by the value of the upper-left grid point
+% there will be 1 facet for each element of Z, and one more grid-point at
+% the end of each dimension
 
-function h = surfCart(X,Y,Z,varargin)
+function h = surfCart(x,y,Z,varargin)
+[X,Y] = ndgrid([x,2*x(end)-x(end-1)],[y,2*y(end)-y(end-1)]);
+Z = [Z, Z(:,end); Z(end,:), Z(end,end)];
 h = surf(X,Y,Z,varargin{:});
 shading flat; axis equal;
 view(90,90);
