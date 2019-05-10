@@ -1,5 +1,5 @@
 % integrating the product of three generalized spherical harmonics
-% <y_{l1,l2,L,M}|y_{l,l,0,0}|y_{l1_,l2_,L_,M_}>
+% <y_{l1,l2}^{L,M}|y_{l,l}^{0,0}|y_{l1_,l2_}^{L_,M_}>
 % see PhysWiki \label{HeTDSE_eq9}
 % supports symbolic input
 

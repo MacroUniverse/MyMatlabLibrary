@@ -2,7 +2,7 @@
 close all;
 
 % === params ===
-L_max = 2; M_max = 0;
+L_max = 2; M_max = 2;
 l1_max = 3; l2_max = 3;
 lmax = 6;
 % ==============
@@ -16,7 +16,7 @@ Mat_9j = cell(lmax+1,0);
 
 for l = 0:lmax
     % Mat{l+1} = simplify(yyy_mat(sym(l),sym(L),sym(M),sym(l1),sym(l2)));
-    Mat{l+1} = yyy_mat(l,L,M,l1,l2);
+    % Mat{l+1} = yyy_mat(l,L,M,l1,l2);
     Mat_9j{l+1} = yyy_mat_9j(l,L,M,l1,l2);
 end
 
@@ -25,9 +25,9 @@ x = 1:size(Mat{1},1); y = x;
 for l = 0:lmax
     figure;
     %squares(x,y,(Mat{l+1}));
-    surfCart(x,y,(Mat{l+1})); shading faceted;
+    surfCart(x,y,(Mat_9j{l+1})); shading faceted;
     axis equal; title(['|<y|y|y>|, l = ', num2str(l),...
-        '  err =', num2str(max(abs(Mat{l+1}(:) - Mat_9j{l+1}(:))))]);
+        '  err =', num2str(max(abs(double(Mat{l+1}(:)) - Mat_9j{l+1}(:))))]);
     colorbar; hold on;
     
     % plot dividers for L
