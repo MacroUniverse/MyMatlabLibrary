@@ -5,7 +5,7 @@
 % psi(:,i) is the wave function of Eng(i)
 % output Y = [psi(x); psi'(x)]
 function [Eng, X, Psi] = bound_shooting(V, xmin, xmid, xmax, mass, ...
-    Espan, EResolution, odeOpt, plot)
+    Espan, EResolution, odeOpt, plot_flat)
 
 % find the zeros in Psi(x_max) vs E plot
 trial_fun = @(E) bound_shooting_trial(E, V, xmin, xmid, xmax, mass, odeOpt);
@@ -22,7 +22,7 @@ for ii = 1:numel(Eng)
         error('duplicate bound state found!');
     end
     
-    if plot
+    if plot_flat
         x = X{ii}; psi = Psi{ii};
         figure; plot(x,psi); axis([x(1),x(end),-1.2,1.2]);
         hold on;
