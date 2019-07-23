@@ -11,5 +11,6 @@ h = surf(X,Y,Z,varargin{:});
 shading flat; axis equal;
 view(90,90);
 xlabel x; ylabel y; zlabel z;
+colorbar;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
 end
