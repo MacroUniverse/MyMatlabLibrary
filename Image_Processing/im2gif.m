@@ -1,8 +1,8 @@
 function im2gif()
 % === params =====
-fname = 'JAD.gif';
+fname = 'Pr1r2.gif';
 Ncolor = 256; % gif support a maximum of 256 (index must be uint8 type)
-dt = 0.4;
+dt = 0.2;
 % ================
 [filename,path] = uigetfile('*.*', 'multiselect', 'on');
 cd(path);

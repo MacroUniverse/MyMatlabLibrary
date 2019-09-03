@@ -7,4 +7,5 @@ h = surf(X,Y,Z,varargin{:});
 shading flat; axis equal;
 xlabel x; ylabel y; zlabel z;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
+cameratoolbar;
 end

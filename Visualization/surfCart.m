@@ -13,4 +13,5 @@ view(90,90);
 xlabel x; ylabel y; zlabel z;
 colorbar;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
+cameratoolbar;
 end
