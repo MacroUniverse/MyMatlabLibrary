@@ -2,7 +2,7 @@
 % n = 3; l = 1; Sqrt[(2*Z/(n*a))^3 * Factorial[n-l-1]/(2*n*Factorial[n+l])]*(2*Z*r/(n*a))^l*LaguerreL[n-l-1, 2l+1, 2Z*r/(n*a)] * Exp[-Z*r/(n*a)]
 % normalization and orthogonality are verified
 
-Z = 1;
+Z = 2;
 
 R10 = @(r) 2*Z^1.5 * exp(-Z*r);
 
@@ -49,6 +49,16 @@ plot(r, r.*R21(r));
 plot(r, r.*R30(r));
 plot(r, r.*R31(r));
 plot(r, r.*R32(r));
-legend({'1, 0', '2, 0', '2, 1', '3, 0', '3, 1', '3, 2'});
+plot(r, r.*R40(r));
+plot(r, r.*R41(r));
+plot(r, r.*R42(r));
+plot(r, r.*R43(r));
+plot(r, r.*R50(r));
+plot(r, r.*R51(r));
+plot(r, r.*R52(r));
+plot(r, r.*R53(r));
+plot(r, r.*R54(r));
+legend({'1, 0', '2, 0', '2, 1', '3, 0', '3, 1', '3, 2', '4, 0', '4, 1', '4, 2', '4, 3', ...
+    '5, 0', '5, 1', '5, 2', '5, 3', '5, 4'});
 xlabel r;
 title 'r R_{l,m}';
