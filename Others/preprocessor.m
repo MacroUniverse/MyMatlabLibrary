@@ -1,9 +1,5 @@
-function code_gen(Ty, Ta, Tx)
-cd(Desktop);
-str = fileread('mul_gen.tmp.cpp');
-str = strrep(str, '@Ty@', Ty);
-str = strrep(str, '@Ta@', Ta);
-str = strrep(str, '@Tx@', Tx);
+function code = preprocessor(tp_file, varargin)
+str = fileread(tp_file);
 ind_meta = strfind(str, '//%');
 Nmeta = numel(ind_meta);
 Ncell = 2*Nmeta + 1;
@@ -34,5 +30,15 @@ end
 eval_str = [eval_str, newline];
 filewrite('cpp_gen.m', eval_str);
 cpp_gen;
-disp(code);
+
+ind2 = 0;
+while true
+    ind1 = find_next(code, '@.*?@', ind2+1) + 1;
+    if (isempty(ind1))
+        break;
+    end
+    ind2 = find_next(code, '@', ind1) - 1;
+    type = code(ind1:ind2);
+    code = strrep(code, ['@' type '@'], eval(type));
+end
 end

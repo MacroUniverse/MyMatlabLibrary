@@ -1,3 +1,3 @@
 function ind = next_line(str, start)
-ind = regexp(str(start:end), newline, 'once') + start;
+ind = find_next(str, newline, start) + 1;
 end
