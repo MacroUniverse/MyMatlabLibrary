@@ -2,6 +2,6 @@
 
 function filewrite(file_name, str)
 fid = fopen(file_name, 'wt');
-fprintf(fid, str);
+fprintf(fid, '%s', str);
 fclose(fid);
 end
