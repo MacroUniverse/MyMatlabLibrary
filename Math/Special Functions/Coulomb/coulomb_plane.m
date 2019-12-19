@@ -1,4 +1,6 @@
 % coulomb plane wave in cartesian coordinate
+% Sign = 1 for outgoing spherical wave, Sign = -1 for incoming spherical
+% wave
 % 'numel(k) = 3'
 % delta(\vec k - \vec k')
 
