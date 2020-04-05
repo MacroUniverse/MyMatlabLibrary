@@ -2,7 +2,9 @@
 % n = 3; l = 1; Sqrt[(2*Z/(n*a))^3 * Factorial[n-l-1]/(2*n*Factorial[n+l])]*(2*Z*r/(n*a))^l*LaguerreL[n-l-1, 2l+1, 2Z*r/(n*a)] * Exp[-Z*r/(n*a)]
 % normalization and orthogonality are verified
 
-Z = 2;
+Rnl = @(Z,n,l,r)sqrt((2*Z/n)^3*factorial(n-l-1)/(2*n*factorial(n+l))) * (2*Z*r/n).^l .* laguerreL(n-l-1, 2*l+1, 2*Z*r/n) .* exp(-Z*r/n);
+
+Z = 1;
 
 R10 = @(r) 2*Z^1.5 * exp(-Z*r);
 
