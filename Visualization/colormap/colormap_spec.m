@@ -1,5 +1,6 @@
 % generate a model spectrum
-% val must be from 0 to 1, corresponding to 400nm to 800nm
+% val must be from 0 to 1
+% output is N-by-3 double matrix from 0 to 1
 function rgb = colormap_spec(val)
 lamb_min = 425; lamb_max = 650;
 lambda = lamb_min + (lamb_max-lamb_min)*val;

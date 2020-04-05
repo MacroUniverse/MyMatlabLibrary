@@ -24,5 +24,5 @@ b(m2) = 1;
 b(m3) = 1-4*(val(m3) - 4/8);
 b(m4) = 0;
 
-rgb = uint8(255*[r, g, b]);
+rgb = [r, g, b];
 end
