@@ -4,7 +4,8 @@ val = linspace(0, 1, N);
 
 % rgb = colormap_jet(val);
 % rgb = colormap_jet2(val);
-rgb = colormap_spec(val);
+% rgb = colormap_spec(val);
+rgb = colormap_hydrogen(val);
 
 rgb1 = uint8(255*rgb);
 rgb2 = uint8(zeros(1, N, 3));
