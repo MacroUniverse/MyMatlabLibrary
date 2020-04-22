@@ -35,18 +35,4 @@ au_t = 2.418884326e-17;   % 1 a.u. time
 au_E = 4.3597446499e-18;  % 1 a.u. energy
 au_Ef = 5.1422067070e11;  % 1 a.u. electric field
 
-% conversion functions
-au_E2eV = @(x) 27.211386018871558*x; % au_E/e
-eV2au_E = @(x) 0.036749322482379*x; % e/au_E
-% wavelengt [nm] and photon energy [eV]
-nm2eV = @(x) 1239.841973964072/x; % 2*pi*c0*h1*1e9/e
-eV2nm = @(x) 1239.841973964072/x;
-% wavelengt [nm] and photon energy [au]
-nm2au_E = @(x) 45.56335252839456/x; % 2*pi*c0*h1*1e9/au_E
-au_E2nm = @(x) 45.56335252839456/x;
-% intensity (W/cm^2) TO electric field (a.u.)
-w_cm22au_Ef = @(x)5.338026811839179e-09*sqrt(x); % sqrt(2e4/epsilon0/c0/au_Ef^2)
-au_Ef2w_cm2 = @(x) 3.509445467042176e+16*x.^2; % epsilon0*c0*au_Ef^2*5e-5
-
-
 save constants.mat
