@@ -4,22 +4,23 @@
 clear;
 cd(mfilepath);
 
-c0=299792458;                        % speed of light  
-mu0=4*pi*1e-7;                       % vacuum permeability 1.256637061435917e-06
-epsilon0=1/mu0/c0^2;                 % vacuum permittivity   8.854187817620391e-12
-k=1/(4*pi*epsilon0);                 % Coulomb's constant  8.987551787368176e+09
-G=6.67408e-11;                       % gravitational constant
-h=6.626070040e-34;                   % Plank constant 
-h1=h/2/pi;                           % reduced Plank constant 1.054571800139113e-34
-e=1.6021766208e-19;                  % electron charge
-me=9.10938215e-31;                   % electron mass
-mp=1.672621898e-27;                  % proton mass
-Rh=1.0973731568539e+07;              % Rydberg constant    me*e^4/(8*epsilon0^2*h^3*c0);         
-Na=6.022140857e23;                   % Avogadro constant
-R=8.3144598;                         % Ideal Gas constant
-kb=1.380650324e-23;                  % Boltzmann constant
-u= 1.660539040e-27;                  % atomic mass unit
-a0=5.2917721067e-11;                 % Bohr radius
+c0 = 299792458;                        % speed of light (exact)
+mu0 = 4e-7*pi;                         % vacuum permeability (exact)
+epsilon0 = 1/(mu0*c0^2);               % vacuum permittivity (exact)
+k = 1/(4*pi*epsilon0);                 % Coulomb's constant (exact)
+G = 6.67408e-11;                       % gravitational constant
+h = 6.62607015e-34;                    % Plank constant (exact)
+hbar = h/(2*pi);                       % reduced Plank constant (exact)
+e = 1.602176634e-19;                   % electron charge (exact)
+me = 9.10938215e-31;                   % electron mass
+mp = 1.672621898e-27;                  % proton mass
+Rh = 1.0973731568539e+07;              % Rydberg constant    me*e^4/(8*epsilon0^2*h^3*c0);         
+Na = 6.022140857e23;                   % Avogadro constant
+R = 8.3144598;                         % Ideal Gas constant
+kb = 1.380650324e-23;                  % Boltzmann constant
+u = 1.660539040e-27;                   % atomic mass unit
+a0 = 5.2917721067e-11;                 % Bohr radius
+alpha = e^2/(4*pi*epsilon0*hbar*c0);   % fine structure constant (exact)
 
 % Mathematical Constants
 E=exp(1);                            % base of the natural logarithm
