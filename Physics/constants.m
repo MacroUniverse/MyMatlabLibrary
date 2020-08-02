@@ -4,23 +4,26 @@
 clear;
 cd(mfilepath);
 
-c0 = 299792458;                        % speed of light (exact)
-mu0 = 4e-7*pi;                         % vacuum permeability (exact)
-epsilon0 = 1/(mu0*c0^2);               % vacuum permittivity (exact)
-k = 1/(4*pi*epsilon0);                 % Coulomb's constant (exact)
+% =========== exact ==================================
+c0 = 299792458;                        % speed of light
+h = 6.62607015e-34;                    % Plank constant
+hbar = h/(2*pi);                       % reduced Plank constant
+e = 1.602176634e-19;                   % elementary charge
+Na = 6.02214076e23;                    % Avogadro constant
+kb = 1.380649e-23;                     % Boltzmann constant
+R = Na*kb;                             % gas constant
+u = 1e-3/Na;                           % atomic mass unit
+
+% =========== measured =====================================
+mu0 = 1.2566370621219e-6;              % vacuum permeability
+epsilon0 = 1/(mu0*c0^2);               % vacuum permittivity
+k = 1/(4*pi*epsilon0);                 % Coulomb's constant
 G = 6.67408e-11;                       % gravitational constant
-h = 6.62607015e-34;                    % Plank constant (exact)
-hbar = h/(2*pi);                       % reduced Plank constant (exact)
-e = 1.602176634e-19;                   % electron charge (exact)
+alpha = e^2/(4*pi*epsilon0*hbar*c0);   % fine structure constant
 me = 9.10938215e-31;                   % electron mass
 mp = 1.672621898e-27;                  % proton mass
-Rh = 1.0973731568539e+07;              % Rydberg constant    me*e^4/(8*epsilon0^2*h^3*c0);         
-Na = 6.022140857e23;                   % Avogadro constant
-R = 8.3144598;                         % Ideal Gas constant
-kb = 1.380650324e-23;                  % Boltzmann constant
-u = 1.660539040e-27;                   % atomic mass unit
+Rh = me*e^4/(8*epsilon0^2*h^3*c0);     % Rydberg constant
 a0 = 5.2917721067e-11;                 % Bohr radius
-alpha = e^2/(4*pi*epsilon0*hbar*c0);   % fine structure constant (exact)
 
 % Mathematical Constants
 E=exp(1);                            % base of the natural logarithm
