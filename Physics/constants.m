@@ -16,7 +16,7 @@ R = Na*kb;                             % gas constant
 u = 0.9999999996530e-3/Na;             % atomic mass unit
 
 % =========== measured =====================================
-mu0 = 1.2566370621219e-6;              % vacuum permeability
+mu0 = 1.25663706212e-6;              % vacuum permeability
 epsilon0 = 1/(mu0*c0^2);               % vacuum permittivity
 k = 1/(4*pi*epsilon0);                 % Coulomb's constant
 G = 6.67430e-11;                       % gravitational constant
@@ -27,14 +27,14 @@ Rh = 1.0973731568160e7;                % Rydberg constant
 a0 = 5.29177210903e-11;                % Bohr radius
 
 % Mathematical Constants
-E=exp(1);                            % base of the natural logarithm
+E = exp(1);                            % base of the natural logarithm
 
 % conversion constants
 
-inch=2.54e-2; % length
-gauss=1e-4;   % electric field
-mile=6.09e+2; % length
-lb=0.454; pound=0.454; % mass
+inch = 2.54e-2; % length
+gauss = 1e-4;   % electric field
+mile = 6.09e+2; % length
+lb = 0.454; pound=0.454; % mass
 au_x = a0;  % 1 a.u. distance
 au_t = me*a0^2/hbar;   % 1 a.u. time
 au_E = hbar^2/(me*a0^2);  % 1 a.u. energy
