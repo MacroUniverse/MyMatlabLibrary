@@ -1,4 +1,5 @@
 % photon energy (au) to wave length (nm)
-function nm = au_E2nm(au_E)
-nm = 45.56335252839456/au_E;
+function nm = au_E2nm(au)
+load constants.mat h c0 au_E;
+nm = h*c0*1e9/(au*au_E);
 end

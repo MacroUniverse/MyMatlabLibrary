@@ -1,4 +1,5 @@
 % convert laser intensity (w/cm^2) to electric field (au)
-function au_Ef = w_cm22au_Ef(w_cm2)
-au_Ef = 5.338026811839179e-09*sqrt(w_cm2);
+function au = w_cm22au_Ef(w_cm2)
+load constants.mat epsilon0 c0 au_Ef
+au = sqrt(w_cm2./(0.5e-4*epsilon0*c0))./au_Ef;
 end
