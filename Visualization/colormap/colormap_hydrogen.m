@@ -1,6 +1,7 @@
 % based on a graph from wikipedia
 % output is N-by-3 double matrix from 0 to 1
 % https://en.wikipedia.org/wiki/File:Linear_visible_spectrum.svg
+% e.g. `colormap(colormap_hydrogen(linspace(0,1,100)))`
 function rgb = colormap_hydrogen(val)
 val = val(:);
 % length 189 each;
