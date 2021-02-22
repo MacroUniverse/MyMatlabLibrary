@@ -8,7 +8,7 @@ function h = surfCart(x,y,Z,varargin)
 [X,Y] = ndgrid([x,2*x(end)-x(end-1)],[y,2*y(end)-y(end-1)]);
 Z = [Z, Z(:,end); Z(end,:), Z(end,end)];
 h = surf(X,Y,Z,varargin{:});
-shading flat; axis equal;
+shading flat;
 view(90,90);
 xlabel x; ylabel y; zlabel z;
 colorbar;

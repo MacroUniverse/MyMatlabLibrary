@@ -1,7 +1,7 @@
 % plot vertical lines across the 2D figure
-function plot_vert(x)
+function h = plot_vert(x, varargin)
 for i = 1:numel(x)
     ax = axis;
-    plot([x(i), x(i)], ax(3:4), 'c');
+    h = plot([x(i), x(i)], ax(3:4), varargin{:});
 end
 end
