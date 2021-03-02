@@ -26,8 +26,9 @@ if ~isequal(size(R),size(Th)) || ...
     error('wrong shape for Th, Ph, Val');
 end
 % plot
-[X,Y,Z] = sph2cart(Ph,pi/2-Th,R);
+[X,Y,Z] = Sph2Cart(R, Th, Ph);
 h = surf(X,Y,Z,Val,varargin{:});
+view(0,0);
 shading flat; axis equal;
 xlabel x; ylabel y; zlabel z;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
