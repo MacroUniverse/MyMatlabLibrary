@@ -1,11 +1,15 @@
 % fft approximation of the analytical fourier transform
 % norm(g) = norm(f)
+% numel(g) = interpN * numel(f)
 
-function [g, k] = FFT(f, dx, dim)
-if nargin < 3
-    g = sffts(f)*(dx/sqrt(2*pi));
-else
+function [g, k] = FFT(f, dx, dim, interpN)
+if exist('interpN', 'var')
+    f = fftresize(f, interpN);
+end
+if exist('dim', 'var')
     g = sffts(f, dim)*(dx/sqrt(2*pi));
+else
+    g = sffts(f)*(dx/sqrt(2*pi));
 end
 
 if nargout == 2

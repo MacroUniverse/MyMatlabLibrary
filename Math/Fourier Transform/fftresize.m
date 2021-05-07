@@ -1,4 +1,4 @@
-% resize vector/matrix length for ftt
+% resize vector/matrix length for ftt by zero padding on both ends
 function y = fftresize(x, newN)
 % === x is row vector ===
 if size(x, 1) == 1 
