@@ -31,6 +31,8 @@ h = surf(X,Y,Z,Val,varargin{:});
 view(0,0);
 shading flat; axis equal;
 xlabel x; ylabel y; zlabel z;
+Rmax = max(R(:));
+axis([-1, 1, -1, 1, -1, 1]*Rmax);
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
 cameratoolbar;
 end
