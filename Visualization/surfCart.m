@@ -10,6 +10,7 @@ Z = [Z, Z(:,end); Z(end,:), Z(end,end)];
 h = surf(X,Y,Z,varargin{:});
 shading flat;
 view(90,90);
+axis([min(X(:)), max(X(:)), min(Y(:)), max(Y(:)), [-1, 1]*max(1, max(abs(Z(:))))]);
 xlabel x; ylabel y; zlabel z;
 colorbar;
 set(datacursormode(gcf), 'UpdateFcn', @datatip);
