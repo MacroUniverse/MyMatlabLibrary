@@ -3,7 +3,7 @@ close all;
 l = 3; k = 2; Z = -1;
 r = linspace(0.1, 30, 400);
 tic; F = coulomb1_sym(l, k, r); toc;
-tic; [dHp, Hp] = dcoulombHplus_sym(l, Z/k, k*r); toc;
+tic; [dHp, Hp] = dcoulombHp_sym(l, Z/k, k*r); toc;
 F1 = imag(Hp); dF1 = imag(dHp);
 G1 = real(Hp); dG1 = real(dHp);
 figure; hold on;

@@ -4,15 +4,21 @@
 % https://en.wikipedia.org/wiki/Coulomb_wave_function
 % http://mathworld.wolfram.com/CoulombWaveFunction.html
 
-function fr = fr_coulomb(l,m,r,k,k_th,k_ph,Sign,scaled)
+function fr = fr_coulomb(l,m,r,k,k_th,k_ph,Z,Sign,scaled)
+if (Z >= 0)
+    error('Z (nuclear charge) must be negative!');
+end
 Sign = sign(Sign);
-Z = -1; eta = Z/k;
+eta = Z/k;
 Nl = numel(l); Nm = numel(m);
 fr = cell(Nl,Nm);
 % either scaled or unscaled
 for jj = 1:Nl
     ph_l = angle(gammaC(l(jj)+1+1i*eta));
     for kk = 1:Nm
+        if abs(m(kk)) > l(jj)
+            continue;
+        end
         a_klm = sqrt(2/pi)*1i^(l(jj))/k*exp(Sign*1i*ph_l)....
                 *conj(SphHarm(l(jj),m(kk),k_th,k_ph));
         fr{jj,kk} = a_klm*coulomb1_mex(l(jj),k,r,Z,scaled);

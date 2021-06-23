@@ -4,10 +4,13 @@
 % 'numel(k) = 3'
 % delta(\vec k - \vec k')
 
-function Psi = coulomb_plane(k,X,Y,Z,Sign)
+function Psi = coulomb_plane(k,X,Y,Z,ZZ,Sign)
+if (ZZ >= 0)
+    error('ZZ (nuclear charge) must be negative!');
+end
 Sign = sign(Sign);
 k0 = norm(k);
-ZZ = -1; eta = ZZ/k0;
+eta = ZZ/k0;
 k_dot_r = k(1)*X + k(2)*Y + k(3)*Z;
 kr = k0*sqrt(X.^2+Y.^2+Z.^2);
 C = 1/(2*pi)^1.5 * gammaC(1+Sign*1i*eta) * exp(-pi*eta*0.5);
