@@ -9,11 +9,13 @@ cd(mfilepath);
 c0 = 299792458;                        % speed of light
 h = 6.62607015e-34;                    % Plank constant
 hbar = h/(2*pi);                       % reduced Plank constant
-qe = 1.602176634e-19;                   % elementary charge
+qe = 1.602176634e-19;                  % elementary charge
 Na = 6.02214076e23;                    % Avogadro constant
 kb = 1.380649e-23;                     % Boltzmann constant
 R = Na*kb;                             % gas constant
 u = 0.9999999996530e-3/Na;             % atomic mass unit
+AU = 149597870700;                     % astronomical unit
+ly = c0*3600*24*365.25;                % light-year
 
 % =========== measured =====================================
 mu0 = 1.25663706212e-6;              % vacuum permeability
