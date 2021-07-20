@@ -13,7 +13,7 @@ else
     g = sffts(f)*(dx/sqrt(2*pi));
 end
 
-if nargin < 3
+if nargin < 4
     if isvector(f)
         k = fftlinspace(2*pi/dx, numel(f));
     else
