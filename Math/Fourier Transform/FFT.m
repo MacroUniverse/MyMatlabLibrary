@@ -22,7 +22,7 @@ if nargin < 3
 else
     k = fftlinspace(2*pi/dx, size(f,dim));
 end
-x_mid = (2*x0 + numel(f)*dx)/2;
+x_mid = (2*x0 + (numel(f)-1)*dx)/2; % mid point of x grid
 if (x_mid ~= 0)
     if (isvector(g))
         g = g .* exp(-1i*k*x_mid);
