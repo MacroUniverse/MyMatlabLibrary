@@ -1,8 +1,9 @@
-% fft approximation of the analytical fourier transform
+% fft approximation of the analytical fourier transform from f(x) to g(k)
+% x and k are both equally spaced, x starts from x0 equally spaced by dx
 % norm(g) = norm(f)
 % numel(g) = interpN * numel(f)
 
-function [g, k] = FFT(f, dx, dim, interpN)
+function [g, k] = FFT(f, x0, dx, dim, interpN)
 if exist('interpN', 'var')
     f = fftresize(f, interpN);
 end
@@ -12,15 +13,21 @@ else
     g = sffts(f)*(dx/sqrt(2*pi));
 end
 
-if nargout == 2
-    if nargin < 3
-        if isvector(f)
-            k = fftlinspace(2*pi/dx, numel(f));
-        else
-            k = fftlinspace(2*pi/dx, size(f,1));
-        end
+if nargin < 3
+    if isvector(f)
+        k = fftlinspace(2*pi/dx, numel(f));
     else
-        k = fftlinspace(2*pi/dx, size(f,dim));
+        k = fftlinspace(2*pi/dx, size(f,1));
+    end
+else
+    k = fftlinspace(2*pi/dx, size(f,dim));
+end
+x_mid = (2*x0 + numel(f)*dx)/2;
+if (x_mid ~= 0)
+    if (isvector(g))
+        g = g .* exp(-1i*k*x_mid);
+    else
+        error('asymmetric x not implemented!');
     end
 end
 end
