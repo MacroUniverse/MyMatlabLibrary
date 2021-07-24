@@ -11,10 +11,17 @@ Sign = sign(m);
 m = abs(m);
 P_lm = legendre(l,cos(Th(:)));
 P_lm = P_lm(m+1,:);
+if (~all(isfinite(P_lm)))
+    error('l too large');
+end
 
 % normalization factor
 Y_lm = zeros(size(Th));
-N_lm = sqrt((2*l+1)*factorial(l-m)./(4*pi*factorial(l+m)));
+fac_d_fac = prod(l-m+1:l+m);
+if (isinf(fac_d_fac))
+    error('overflow!');
+end
+N_lm = sqrt((2*l+1)./(4*pi*fac_d_fac));
 if Sign >= 0
     Y_lm(:) = N_lm * P_lm' .* exp(1i*m*Ph(:));
 else
