@@ -25,7 +25,7 @@ if ~(isnan(C) || isinf(C) || C == 0)
         mark = (r > eps);
         F(mark) = F(mark)./r(mark);
         if abs(l) < eps
-            F(~mark) = k*C/(-0.5i)^(l+1);
+            F(~mark) = (2i)^(l+1)*k*C;
         else
             F(~mark) = 0;
         end
