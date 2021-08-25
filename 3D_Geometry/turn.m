@@ -1,71 +1,72 @@
-%格式(flag=0)
-%[x1,y1,z1]=turn(x,y,z,A,theta)  把空间点绕原点以A方向为轴逆时针转动theta角
-%[x1,y1,z1]=turn(x,y,z,D1,D2)  把空间点由D1方向绕原点转到D2方向
-%    numel(x)=numel(y)=numel(z)
-%    numel(D1)=numel(D2)=numel(A)=3
-%    numel(theta)=1
+% 格式 0
+% [X1,Y1,Z1] = turn(X,Y,Z,A,theta)  把空间点绕原点以 A 方向为轴逆时针转动theta角
+% [X1,Y1,Z1] = turn(X,Y,Z,D1,D2)  把空间点由 D1 方向绕原点转到 D2 方向
+% numel(X) = numel(Y) = numel(Z)
+% numel(D1) = numel(D2) = numel(A) = 3
+% numel(theta) = 1
 
-%格式(flag=1).
-%P1=turn(P,A,theta) 把空间点绕原点以A方向为轴逆时针转动theta角
-%P1=turn(P,D1,D2)  把空间点由D1方向绕原点转到D2方向
-%size(P)=size(P1)=[N,3]
+% 格式 1
+% P1 = turn(P,A,theta) 把空间点绕原点以 A 方向为轴逆时针转动 theta 角
+% P1 = turn(P,D1,D2)  把空间点由 D1 方向绕原点转到 D2 方向
+% P, P1 的每行是一个点， size(P) = size(P1) = [N,3]
 
+function [X1, Y1, Z1] = turn(X, Y, Z, A, theta)
 
-function [x1,y1,z1]=turn(x,y,z,A,theta)
-
-%格式检查
-flag=0; %flag=0表示格式0, flag=1表示格式1
-if nargout==1 && nargin==3  %格式检查
-    A=y; theta=z;
-    y=x(:,2); z=x(:,3); x=x(:,1);
-    flag=1;
-elseif numel(x)~=numel(y)||numel(y)~=numel(z) %格式0要求xyz元素个数相同即可
-    error('numel of x,y,z is not equal')
+% 格式检查
+flag = 0; % flag = 0 表示格式 0, flag = 1 表示格式 1
+if nargout == 1 && nargin == 3  % 格式检查
+    A = Y; theta = Z;
+    Y = X(:,2); Z = X(:,3); X = X(:,1);
+    flag = 1;
+elseif numel(X) ~= numel(Y) || numel(Y) ~= numel(Z) %格式 0 要求 xyz 元素个数相同即可
+    error('numel of x, y, z is not equal')
 end
 
-if length(A(:))~=3 %两种格式都要求A是一个矢量
+if length(A(:)) ~= 3 % 两种格式都要求 A 是一个矢量
     error('length A is not 3');
 end
 
-if numel(theta)==3 %
-    D1=vunit(A);
-    D2=vunit(theta);
-    A=cross(D1,D2);
-    C=dot(D1,D2);
-    S=sqrt(1-C^2);
-elseif numel(theta)==1
-    C=cos(theta);
-    S=sin(theta);
+if numel(theta) == 3
+    D1 = vunit(A);
+    D2 = vunit(theta);
+    A = cross(D1,D2);
+    C = dot(D1,D2);
+    S = sqrt(1-C^2);
+elseif numel(theta) == 1
+    C = cos(theta);
+    S = sin(theta);
 else
     error('numel(theta)~=1 or numel(A2)~=3'); 
 end
 
-A0=vunit(A);
-Ax=A0(1); Ay=A0(2); Az=A0(3);
-C1=1-C;
+normA = sqrt(A(1)^2 + A(2)^2 + A(3)^3);
+if normA == 0
+    X1 = X; Y1 = Y; Z1 = Z;
+    return;
+end
+A0 = A / normA;
+Ax = A0(1); Ay = A0(2); Az = A0(3);
+C1 = 1 - C;
 
-M=...  %见<普通物理索引>旋转矩阵
+M = ...  % 见小时百科旋转矩阵
 [
 C1*Ax*Ax+C      C1*Ax*Ay-Az*S   C1*Ax*Az+Ay*S
 C1*Ay*Ax+Az*S  C1*Ay*Ay+C       C1*Ay*Az-Ax*S
 C1*Az*Ax-Ay*S   C1*Az*Ay+Ax*S  C1*Az*Az+C 
 ];
 
-XYZ1=M*[x(:)';y(:)';z(:)'];
+XYZ1 = M*[X(:)';Y(:)';Z(:)'];
 
-if flag==0 %原格式
-    x1=zeros(size(x));
-    y1=zeros(size(y));
-    z1=zeros(size(z));
+if flag == 0 % 原格式
+    X1 = zeros(size(X));
+    Y1 = zeros(size(Y));
+    Z1 = zeros(size(Z));
 
-    x1(:)=XYZ1(1,:);
-    y1(:)=XYZ1(2,:);
-    z1(:)=XYZ1(3,:);
-else  %新格式
-    x1=XYZ1';
-    y1=[]; z1=[];
+    X1(:)=XYZ1(1,:);
+    Y1(:)=XYZ1(2,:);
+    Z1(:)=XYZ1(3,:);
+else  % 新格式
+    X1 = XYZ1';
+    Y1 = []; Z1 = [];
 end
-
 end
-
-
