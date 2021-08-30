@@ -25,7 +25,7 @@ if Nth == 1
     [R,Ph] = ndgrid(r1,ph); Th = th*ones(Nr,Nph); F = zeros(Nr,Nph);
     [R,Th,Ph] = sph_wrap(R,Th,Ph);
     for pw = 1:Npw
-        F = F + data(mask, pw) .* SphHarm(l(pw),m(pw),th*ones(Nph, 1),ph);
+        F = F + data(mask, pw) .* SphHarm(l(pw),m(pw),th*ones(size(ph)),ph);
     end
 elseif Nph == 1
     [R,Th] = ndgrid(r1,th); Ph = ph*ones(Nr,Nth); F = zeros(Nr,Nth);
