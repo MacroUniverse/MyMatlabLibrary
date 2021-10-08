@@ -8,7 +8,7 @@
 
 function F = coulomb1_ode(l,k,r)
 warning('this code is bad, use "coulomb1()" or "coulomb_mex()" instead');
-Z = -1; eta2 = 2*(Z/k); llp1 = l*(l+1);
+Z = 1; eta2 = -2*(Z/k); llp1 = l*(l+1);
 if any(r < 0), error('r must be >= 0 !'); end
 rmin = min(r(:)); rmax = max(r(:));
 r0 = 0.5*(rmin + rmax);

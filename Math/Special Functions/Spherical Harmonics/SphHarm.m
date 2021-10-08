@@ -7,6 +7,7 @@
 function Y_lm = SphHarm(l,m,Th,Ph)
 mark = mod(Th,2*pi) > pi;
 Ph(mark) = Ph(mark) + pi;
+if m > l, error('m > l'); end
 Sign = sign(m);
 m = abs(m);
 P_lm = legendre(l,cos(Th(:)));

@@ -1,4 +1,7 @@
+% Coulomb function of the first kind F_l(eta, rho)
 % verified with Mathematica
+% l, eta are scalars, rho is vector
+
 function ret = coulombF_sym(l, eta, rho)
 syms L Eta Rho;
 F = (-0.5i)^(L+1)*2^L*exp(-sym(pi)*Eta/2)....
