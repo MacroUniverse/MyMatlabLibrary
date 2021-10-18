@@ -1,4 +1,5 @@
 function f = gammaC(z)
+error('use symbolic toolbox gamma() instead');
 % GAMMA  Gamma function valid in the entire complex plane.
 %        Accuracy is 15 significant digits along the real axis
 %        and 13 significant digits elsewhere.
