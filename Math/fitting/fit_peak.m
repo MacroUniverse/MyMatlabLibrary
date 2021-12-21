@@ -1,6 +1,6 @@
 % get precise position of any peak
 % use polynomial fit then find local peak of polynomial
-function [xp, yp] = fit_peak(x, y, order)
+function [xp, yp, p] = fit_peak(x, y, order)
 p = polyfit(x, y, order);
 dp = polyder(p);
 f = @(x)polyval(dp, x);
