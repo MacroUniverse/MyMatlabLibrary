@@ -30,7 +30,7 @@ while 1
         scatter(temp(:,1),temp(:,2));
         P = [P; temp];
         if nargout == 0
-            save plot2data.mat
+            save plot2data.mat P
         end
     end
     temp = input('继续:回车; 结束:1');
@@ -40,4 +40,5 @@ while 1
 end
 x = (P(:,1)-P0(1))/(Px(1)-P0(1));
 y = (P(:,2)-P0(2))/(Py(2)-P0(2));
+save plot2data.mat x y
 end
