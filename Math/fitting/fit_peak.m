@@ -1,5 +1,6 @@
 % get precise position of any peak
 % use polynomial fit then find local peak of polynomial
+% see also search_peak (smatter)
 function [xp, yp, p] = fit_peak(x, y, order)
 p = polyfit(x, y, order);
 dp = polyder(p);
