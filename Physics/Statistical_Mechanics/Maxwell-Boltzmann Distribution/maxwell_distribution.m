@@ -20,10 +20,5 @@ V = rand(N,3);
 V = vunit(V)*sqrt(3*kb*T/m); % 每个粒子都要有平均动能
 v = vmag(V); % 速度绝对值
 
-t = linspace(0, tmax, Nt); dt = t(2)-t(1);
-for it = 1:Nt
-    P = P + V*dt;
-    [P, V] = do_reflection(P, V, R, xmax, ymax);
-    [P, V] = do_collision(P, V, R);
-    figure(1); scatter(P(:,1), P(:,2), P(:,3));
-end
+t = linspace(0, tmax, Nt);
+

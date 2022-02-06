@@ -9,13 +9,13 @@ if ~exist('nobound','var') || isempty(nobound)
 end
 Nv = numel(v);
 if ~nobound % with bound checking
-    if x > v(end) || x < v(1)
+    if x >= v(end) || x < v(1)
         error('x out of bound!');
     end
 else
-    if x > v(end)
+    if x >= v(end)
         ind = Nv; return;
-    elseif x <= v(1)
+    elseif x < v(1)
         ind = 0; return;
     end
 end
