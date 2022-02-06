@@ -27,7 +27,7 @@ lmin = min(l); lmax = max(l);
 for ik = 1:Nk
     F_l = cell(1, lmax-lmin+1);
     for pw = 1:Npw
-        ph_l = angle(gammaC(l(pw)+1+1i*Z/k(ik)));
+        ph_l = angle(gamma(sym(l(pw)+1+1i*Z/k(ik))));
         A_l = sqrt(2/pi)*1i^(-l(pw))*exp(-Sign*1i*ph_l);
         ind = l(pw)-lmin+1;
         if isempty(F_l{ind})
