@@ -4,6 +4,7 @@
 % B.C: Psi(1,:) = Psi(end,:) = 0
 % V(x, t) is the time dependent potential
 function Psi = cn1D(V, xspan, tspan, psi0, Nx, Nt)
+error('use the one in PhysWiki');
 A = zeros(Nx - 2, Nx - 2); B = zeros(Nx - 2, 1);
 Psi = zeros(Nx, Nt); Psi(:,1) = psi0;
 x = linspace(xspan(1), xspan(2), Nx);
