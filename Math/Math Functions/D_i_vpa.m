@@ -1,4 +1,5 @@
 % 数值偏导 (变精度)
+% f 需要支持 sym 类型的变精度参数
 % 精确到最后一位有效数字
 function ret = D_i_vpa(f, i, x, h)
 [ret, digi] = D_i(f, i, x, h);
