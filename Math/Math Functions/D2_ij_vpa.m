@@ -7,8 +7,8 @@ if digi >= 15
     return;
 end
 old_digi = digits;
-digits(2*15.6536 - digi);
-ret = D2_ij(f, i, j, vpa(x), h);
+digits(2*15.6536 - digi - 8);
+ret = D2_ij(f, i, j, num2vpa(x), h);
 ret = double(ret);
 digits(old_digi);
 end
