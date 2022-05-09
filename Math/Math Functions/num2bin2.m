@@ -3,6 +3,9 @@ function [N, Npow] = num2bin2(x)
 if isnan(x) || isinf(x)
     N = x; Npow = x; return;
 end
+if x == 0
+    N = 0; Npow = 0; return;
+end
 N = x;
 Npow = 0;
 for e = [16, 8, 4, 2, 1]

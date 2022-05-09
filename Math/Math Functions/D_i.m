@@ -4,6 +4,9 @@ function [ret, digi] = D_i(f, i, x, h)
 x(i) = x(i) - 0.5*h;
 f1 = f(x);
 h = (x(i) + h) - x(i);
+if h == 0
+    error('h 太小');
+end
 x(i) = x(i) + h;
 f2 = f(x);
 dif = f2 - f1;

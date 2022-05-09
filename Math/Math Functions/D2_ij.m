@@ -4,6 +4,9 @@
 function [ret, digi] = D2_ij(f, i, j, x, h)
 if i == j
     h = (x(i) + h) - x(i);
+    if h == 0
+        error('h 太小');
+    end
     f2 = f(x);
     x(i) = x(i) + h;
     f3 = f(x);
@@ -16,6 +19,9 @@ else % i ~= j
     x(i) = x(i) - 0.5*h; x(j) = x(j) - 0.5*h;
     hi = (x(i) + h) - x(i);
     hj = (x(j) + h) - x(j);
+    if hi == 0 || hj == 0
+        error('h 太小');
+    end
     f1 = f(x);
     x(i) = x(i) + hi;
     f2 = f(x);
