@@ -1,11 +1,12 @@
-% convert all .matt files in the current folder to .mat files
+% convert all .matb files in the current folder and subfolders to .mat files
 function matb2mat_all(replace)
-names = ls('*.matb');
-for ii = 1:size(names,1)
-    disp(names(ii,:));
-    matb2mat(strtrim(names(ii,:)));
-    if nargin == 1
-        delete(names(ii,:));
+    names = dir('**/*.matb');
+    for ii = 1:numel(names)
+        fname = [names(ii).folder '\' names(ii).name];
+        disp(fname);
+        matb2mat(fname);
+        if nargin == 1
+            delete(fname);
+        end
     end
-end
 end
