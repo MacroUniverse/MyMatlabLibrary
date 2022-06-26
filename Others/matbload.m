@@ -87,4 +87,5 @@ for ii = 1:numvars
     end
     varnames = [varnames, {varname}];
 end
+fclose(fid);
 end
