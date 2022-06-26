@@ -63,6 +63,7 @@ for ii = 1:1e10
         else
             error('not implemented!');
         end
+        if feof(fid), break; end
     end
     varnames = [varnames, {varname}];
 end
