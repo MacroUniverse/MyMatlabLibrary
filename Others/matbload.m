@@ -2,8 +2,9 @@
 % varnames is a cell array containing the names of the variables exported
 % use mattload(fname, 'var1', 'var2', ...) to load specific variables
 
-function matbload(fname, varargin)
+function varnames = matbload(fname, varargin)
 fid = fopen(fname, 'r');
+varnames = {};
 for ii = 1:1e10
     Nname = fread(fid, 1, 'int64');
     if (Nname > 100)
@@ -63,5 +64,6 @@ for ii = 1:1e10
             error('not implemented!');
         end
     end
+    varnames = [varnames, {varname}];
 end
 end
