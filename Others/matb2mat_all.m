@@ -5,7 +5,7 @@ function matb2mat_all(replace)
         fname = [names(ii).folder '\' names(ii).name];
         disp(fname);
         matb2mat(fname);
-        if nargin == 1
+        if nargin == 1 && exist(fname(1:end-1), 'file')
             delete(fname);
         end
     end
