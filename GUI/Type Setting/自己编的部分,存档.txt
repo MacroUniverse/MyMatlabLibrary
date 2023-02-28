@@ -1,0 +1,17 @@
+初始化
+
+set(handles.edit1,'String',{''});
+
+
+
+
+
+函数(push_button1_callback)
+
+menu=get(handles.popupmenu1,'String');
+val=get(handles.popupmenu1,'Value');
+book=menu{val};
+String=get(handles.edit1,'String');
+String=f1(String);
+String=txt(String,book);
+set(handles.edit1,'String',String);

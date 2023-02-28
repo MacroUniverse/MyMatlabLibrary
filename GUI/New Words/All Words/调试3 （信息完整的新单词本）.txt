@@ -1,0 +1,26 @@
+</item><item>    <word>lucrative</word>
+    <trans><![CDATA[adj. 有利可图的，赚钱的
+ex. a lucrative position]]></trans>
+    <phonetic><![CDATA[['lju:kr\e1\tiv]]]></phonetic>
+    <tags>形容词</tags>
+    <progress>-1</progress>
+</item><item>    <word>mathematica</word>
+    <trans><![CDATA[]]></trans>
+    <phonetic><![CDATA[]]></phonetic>
+    <tags>matlab</tags>
+    <progress>-1</progress>
+</item><item>    <word>grubby</word>
+    <trans><![CDATA[adj. 肮脏的；生蛆的；]]></trans>
+    <phonetic><![CDATA[['ɡr\a2\bi]]]></phonetic>
+    <tags>形容词</tags>
+    <progress>-1</progress>
+</item><item>    <word>myrtle</word>
+    <trans><![CDATA[n. 桃金娘；桃金娘科植物]]></trans>
+    <phonetic><![CDATA[['m\e1\:tl]]]></phonetic>
+    <tags>实物</tags>
+    <progress>-1</progress>
+</item><item>    <word>illegal</word>
+    <trans><![CDATA[adj.违法的; 非法的]]></trans>
+    <phonetic><![CDATA[]]></phonetic>
+    <tags>形容词</tags>
+    <progress>-1</progress>

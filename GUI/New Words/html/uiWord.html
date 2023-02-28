@@ -1,0 +1,319 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>uiWord</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-03-03"><meta name="DC.source" content="uiWord.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">%&#26377;&#36947;&#21333;&#35789;&#26412;&#23548;&#20986;&#25991;&#20214;&#35835;&#21462;</span>
+<span class="keyword">function</span> uiWord
+figure;
+hE=uicontrol(<span class="string">'Style'</span>,<span class="string">'edit'</span>,<span class="string">'max'</span>,2,<span class="string">'Units'</span>,<span class="string">'Normalized'</span>,<span class="string">'Position'</span>,[0 0 0.9 1],<span class="string">'HorizontalAlignment'</span>,<span class="string">'left'</span>,<span class="string">'String'</span>,{<span class="string">''</span>});
+uicontrol(<span class="string">'Style'</span>,<span class="string">'pushbutton'</span>,<span class="string">'Units'</span>,<span class="string">'Normalized'</span>,<span class="string">'Position'</span>,[0.9,0.9,0.1,0.1],<span class="string">'String'</span>,<span class="string">'&#23548;&#20837;'</span>,<span class="string">'Callback'</span>,@login);
+
+
+    <span class="comment">%&#23548;&#20837;&#30340;&#31243;&#24207;</span>
+    <span class="keyword">function</span> login(~,~)
+</pre><pre class="codeinput">        S=get(hE,<span class="string">'String'</span>);
+        Nrow=numel(S);<span class="comment">%&#27599;&#19968;&#34892;&#20026;&#19968;&#20010;&#20803;&#32990;</span>
+        ind=zeros(Nrow,1); jj=0;
+</pre><pre class="codeinput">        <span class="comment">%&#21028;&#26029;&#26377;&#20960;&#20010;&#21333;&#35789;, &#27599;&#20010;&#21333;&#35789;&#30340;&#34892;&#21495;&#23384;&#21040;ind(jj)&#37324;&#38754;. &#21333;&#35789;&#30340;&#24635;&#25968;&#26159;Nword</span>
+        <span class="keyword">for</span> ii=1:Nrow
+            <span class="keyword">if</span> numel(S{ii})&gt;23 &amp;&amp; strcmp(S{ii}(1:23),<span class="string">'&lt;/item&gt;&lt;item&gt;    &lt;word&gt;'</span>)
+                jj=jj+1; ind(jj)=ii;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+        Nword=jj;
+        ind=ind(1:Nword);
+</pre><pre class="codeinput">        <span class="comment">%&#25552;&#21462;&#19968;&#20010;&#21333;&#35789;&#30340;&#25152;&#26377;&#20449;&#24687;</span>
+        <span class="comment">%word0: &#25152;&#26377;&#30340;&#21333;&#35789;; string0: &#25152;&#26377;&#30340;&#27880;&#37322;; phonetic0: &#25152;&#26377;&#30340;&#38899;&#26631;; tags0: &#25152;&#26377;&#30340;&#21333;&#35789;&#20998;&#31867;</span>
+        word0=cell(Nword,1); word0(:)={<span class="string">''</span>}; string0=word0; phonetic0=word0; tags0=word0;
+
+        <span class="keyword">for</span> ii=1:Nword
+            <span class="comment">%&#33719;&#21462;&#24403;&#21069;&#21333;&#35789;&#30340;&#32467;&#26463;&#34892;&#21495;(temp)</span>
+            <span class="keyword">if</span> ii+1&gt;Nword<span class="comment">%&#22914;&#26524;&#26159;&#26368;&#21518;&#19968;&#20010;&#21333;&#35789;</span>
+                temp=Nrow;
+            <span class="keyword">else</span>
+                temp=ind(ii+1)-1;
+            <span class="keyword">end</span>
+            <span class="comment">%&#19968;&#20010;&#21333;&#35789;&#30340;&#25152;&#26377;&#25991;&#26412;s</span>
+            <span class="keyword">for</span> jj=ind(ii):temp
+                S{jj}=[S{jj} char(13)];<span class="comment">%&#27599;&#20010;&#20803;&#32990;&#28155;&#21152;&#25442;&#34892;&#31526;</span>
+            <span class="keyword">end</span>
+            s=[S{ind(ii):temp}];
+            <span class="comment">%&#25552;&#21462;s&#20013;&#19981;&#21516;&#20869;&#23481;&#30340;&#33539;&#22260;</span>
+            word_begin=strfind(s,<span class="string">'&lt;word&gt;'</span>)+6;  word_end=strfind(s,<span class="string">'&lt;/word&gt;'</span>)-1;
+            string_begin=strfind(s,<span class="string">'&lt;trans&gt;&lt;![CDATA['</span>)+16; string_end=strfind(s,<span class="string">']]&gt;&lt;/trans&gt;'</span>)-1;
+            phonetic_begin=strfind(s,<span class="string">'&lt;phonetic&gt;&lt;![CDATA['</span>)+19; phonetic_end=strfind(s,<span class="string">']]&gt;&lt;/phonetic&gt;'</span>)-1;
+            tag_begin=strfind(s,<span class="string">'&lt;tags&gt;'</span>)+6; tag_end=strfind(s,<span class="string">'&lt;/tags&gt;'</span>)-1;
+
+            <span class="comment">%&#35835;&#21462;&#21333;&#35789;</span>
+            <span class="keyword">if</span> word_end &gt;= word_begin
+                word0{ii}=s(word_begin:word_end);
+            <span class="keyword">end</span>
+            <span class="comment">%&#35835;&#21462;&#27880;&#37322;</span>
+            <span class="keyword">if</span> string_end &gt;= string_begin
+               string0{ii}=s(string_begin:string_end);
+            <span class="keyword">end</span>
+            <span class="comment">%&#35835;&#21462;&#38899;&#26631;</span>
+            <span class="keyword">if</span> phonetic_end &gt; phonetic_begin+1
+               temp=s(phonetic_begin:phonetic_end);
+               <span class="keyword">if</span> temp(1)==<span class="string">'['</span>
+                   temp=temp(2:end);
+               <span class="keyword">end</span>
+               <span class="keyword">if</span> temp(end)==<span class="string">']'</span>
+                   temp=temp(1:end-1);
+               <span class="keyword">end</span> <span class="comment">%temp&#23601;&#26159;&#36196;&#35064;&#35064;&#30340;&#38899;&#26631;&#20195;&#30721;,&#20854;&#20013;&#29305;&#27530;&#23383;&#31526;&#29992;\...\&#25324;&#36215;&#26469;</span>
+               ind1=strfind(temp,<span class="string">'\'</span>);
+               kk=1; n=1; phonetic0{ii}=cell(20,1);<span class="comment">%&#31532;kk&#20010;&#29305;&#27530;&#23383;&#31526;, &#31532;n&#20010;&#23383;&#31526;, phonetic0{ii}&#20013;&#31532;jj&#20010;&#20803;&#32990;</span>
+               <span class="keyword">for</span> jj=1:20
+                   <span class="keyword">if</span> temp(n)~=<span class="string">'\'</span>; <span class="comment">%&#38750;&#36716;&#20041;&#38899;&#26631;</span>
+                       phonetic0{ii}{jj}=temp(n);
+                   <span class="keyword">else</span>  <span class="comment">%&#36716;&#20041;&#38899;&#26631;</span>
+                       n=ind1(2*kk);
+                       phonetic0{ii}{jj}=temp(ind1(2*kk-1)+1:n-1);
+                       kk=kk+1;
+                   <span class="keyword">end</span>
+                   n=n+1;
+                   <span class="keyword">if</span> n&gt;numel(temp)
+                       phonetic0{ii}=phonetic0{ii}(1:jj); <span class="keyword">break</span>;
+                   <span class="keyword">end</span>
+               <span class="keyword">end</span>
+            <span class="keyword">else</span>
+                phonetic0{ii}=[];
+            <span class="keyword">end</span>
+
+            <span class="comment">%&#35835;&#21462;&#20998;&#31867;&#26631;&#31614;</span>
+            <span class="keyword">if</span> tag_end &gt;= tag_begin
+               tags0{ii}=s(tag_begin:tag_end);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+    load <span class="string">wordbook.mat</span> <span class="string">word</span> <span class="string">phonetic</span> <span class="string">string</span> <span class="string">tags</span>
+
+    <span class="comment">%&#26816;&#26597;&#37325;&#21472;&#30340;&#21333;&#35789;&#65292;&#24182;&#19988;&#20445;&#23384;</span>
+    N=numel(word);<span class="comment">%&#21407;&#26469;&#30340;&#21333;&#35789;&#25968;</span>
+    kk=N;
+    N0=numel(word0);<span class="comment">%&#26032;&#22686;&#30340;&#21333;&#35789;&#25968;</span>
+    word=[word; cell(N0,1)]; phonetic=[phonetic; cell(N0,1)];
+    string=[string; cell(N0,1)]; tags=[tags; cell(N0,1)];
+
+    <span class="keyword">if</span> N~=0 <span class="comment">%&#25968;&#25454;&#24211;&#26377;&#21333;&#35789;</span>
+
+        <span class="keyword">for</span> ii=1:N0
+            temp=0;<span class="comment">%0&#20195;&#34920;&#27809;&#26377;&#25214;&#21040;&#37325;&#22797;&#65292;1&#20195;&#34920;&#19982;&#25968;&#25454;&#24211;&#37325;&#22797;</span>
+            <span class="keyword">for</span> jj=1:kk
+                <span class="keyword">if</span> strcmp(word(jj),word0(ii));<span class="comment">%&#24050;&#32463;&#23384;&#22312;&#35813;&#21333;&#35789;</span>
+                    temp=1;
+                    <span class="keyword">if</span> isempty(tags{jj}), tags(jj)=tags0(ii); <span class="keyword">end</span> <span class="comment">%&#22914;&#26524;&#21407;&#26469;&#27809;&#26377;&#20998;&#31867;&#65292;&#21017;&#34917;&#22238;&#20998;&#31867;</span>
+                    <span class="keyword">if</span> isempty(phonetic{jj}), phonetic(jj)=phonetic0(ii); <span class="keyword">end</span><span class="comment">%&#27809;&#26377;&#38899;&#26631;&#65292;&#34917;&#22238;&#38899;&#26631;</span>
+                    <span class="comment">%string(ii)=string0(jj); %&#27880;&#37322;&#23436;&#20840;&#26367;&#25442;&#25104;&#26032;&#30340;</span>
+                    <span class="keyword">break</span>;
+                <span class="keyword">end</span>
+            <span class="keyword">end</span>
+            <span class="keyword">if</span> temp==0 <span class="comment">%&#26080;&#37325;&#22797;&#65292;&#28155;&#21152;&#22312;&#21518;&#38754;</span>
+                kk=kk+1;
+                word(kk)=word0(ii); phonetic(kk)=phonetic0(ii);
+                string(kk)=string0(ii); tags(kk)=tags0(ii);
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+        word=word(1:kk); phonetic=phonetic(1:kk);<span class="comment">%&#21435;&#38500;&#22810;&#22810;&#20313;&#30340;&#20803;&#32990;</span>
+        string=string(1:kk); tags=tags(1:kk);
+    <span class="keyword">else</span> <span class="comment">%&#25968;&#25454;&#24211;&#27809;&#26377;&#21333;&#35789;</span>
+        word=word0; phonetic=phonetic0; string=string0; tags=tags0;
+    <span class="keyword">end</span>
+    save <span class="string">wordbook.mat</span> <span class="string">word</span> <span class="string">phonetic</span> <span class="string">string</span> <span class="string">tags</span>
+    disp(<span class="string">'done'</span>);
+</pre><pre class="codeinput">    <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+</pre><img vspace="5" hspace="5" src="uiWord_01.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%有道单词本导出文件读取
+function uiWord
+figure;
+hE=uicontrol('Style','edit','max',2,'Units','Normalized','Position',[0 0 0.9 1],'HorizontalAlignment','left','String',{''});
+uicontrol('Style','pushbutton','Units','Normalized','Position',[0.9,0.9,0.1,0.1],'String','导入','Callback',@login);
+
+
+    %导入的程序
+    function login(~,~)
+        S=get(hE,'String');
+        Nrow=numel(S);%每一行为一个元胞
+        ind=zeros(Nrow,1); jj=0;
+        
+        %%
+        %判断有几个单词, 每个单词的行号存到ind(jj)里面. 单词的总数是Nword
+        for ii=1:Nrow
+            if numel(S{ii})>23 && strcmp(S{ii}(1:23),'</item><item>    <word>')
+                jj=jj+1; ind(jj)=ii;
+            end
+        end
+        Nword=jj;
+        ind=ind(1:Nword);
+        
+        %%
+        %提取一个单词的所有信息
+        %word0: 所有的单词; string0: 所有的注释; phonetic0: 所有的音标; tags0: 所有的单词分类
+        word0=cell(Nword,1); word0(:)={''}; string0=word0; phonetic0=word0; tags0=word0;
+        
+        for ii=1:Nword
+            %获取当前单词的结束行号(temp)
+            if ii+1>Nword%如果是最后一个单词
+                temp=Nrow;
+            else
+                temp=ind(ii+1)-1;
+            end
+            %一个单词的所有文本s
+            for jj=ind(ii):temp
+                S{jj}=[S{jj} char(13)];%每个元胞添加换行符
+            end
+            s=[S{ind(ii):temp}];
+            %提取s中不同内容的范围
+            word_begin=strfind(s,'<word>')+6;  word_end=strfind(s,'</word>')-1;
+            string_begin=strfind(s,'<trans><![CDATA[')+16; string_end=strfind(s,']]></trans>')-1;
+            phonetic_begin=strfind(s,'<phonetic><![CDATA[')+19; phonetic_end=strfind(s,']]></phonetic>')-1;
+            tag_begin=strfind(s,'<tags>')+6; tag_end=strfind(s,'</tags>')-1;
+
+            %读取单词
+            if word_end >= word_begin 
+                word0{ii}=s(word_begin:word_end);
+            end
+            %读取注释
+            if string_end >= string_begin
+               string0{ii}=s(string_begin:string_end);
+            end
+            %读取音标
+            if phonetic_end > phonetic_begin+1
+               temp=s(phonetic_begin:phonetic_end);
+               if temp(1)=='['
+                   temp=temp(2:end);
+               end
+               if temp(end)==']'
+                   temp=temp(1:end-1);
+               end %temp就是赤裸裸的音标代码,其中特殊字符用\...\括起来
+               ind1=strfind(temp,'\');
+               kk=1; n=1; phonetic0{ii}=cell(20,1);%第kk个特殊字符, 第n个字符, phonetic0{ii}中第jj个元胞
+               for jj=1:20
+                   if temp(n)~='\'; %非转义音标
+                       phonetic0{ii}{jj}=temp(n);
+                   else  %转义音标
+                       n=ind1(2*kk);
+                       phonetic0{ii}{jj}=temp(ind1(2*kk-1)+1:n-1);
+                       kk=kk+1;
+                   end
+                   n=n+1;
+                   if n>numel(temp)
+                       phonetic0{ii}=phonetic0{ii}(1:jj); break;
+                   end
+               end
+            else
+                phonetic0{ii}=[];
+            end
+            
+            %读取分类标签
+            if tag_end >= tag_begin
+               tags0{ii}=s(tag_begin:tag_end);
+            end
+        end
+
+    load wordbook.mat word phonetic string tags
+    
+    %检查重叠的单词，并且保存
+    N=numel(word);%原来的单词数
+    kk=N;
+    N0=numel(word0);%新增的单词数
+    word=[word; cell(N0,1)]; phonetic=[phonetic; cell(N0,1)]; 
+    string=[string; cell(N0,1)]; tags=[tags; cell(N0,1)];
+
+    if N~=0 %数据库有单词
+        
+        for ii=1:N0
+            temp=0;%0代表没有找到重复，1代表与数据库重复
+            for jj=1:kk
+                if strcmp(word(jj),word0(ii));%已经存在该单词
+                    temp=1;
+                    if isempty(tags{jj}), tags(jj)=tags0(ii); end %如果原来没有分类，则补回分类
+                    if isempty(phonetic{jj}), phonetic(jj)=phonetic0(ii); end%没有音标，补回音标
+                    %string(ii)=string0(jj); %注释完全替换成新的
+                    break;
+                end
+            end
+            if temp==0 %无重复，添加在后面
+                kk=kk+1; 
+                word(kk)=word0(ii); phonetic(kk)=phonetic0(ii);
+                string(kk)=string0(ii); tags(kk)=tags0(ii);
+            end
+        end
+        word=word(1:kk); phonetic=phonetic(1:kk);%去除多多余的元胞
+        string=string(1:kk); tags=tags(1:kk);
+    else %数据库没有单词
+        word=word0; phonetic=phonetic0; string=string0; tags=tags0;
+    end
+    save wordbook.mat word phonetic string tags
+    disp('done');
+    end
+
+end
+##### SOURCE END #####
+--></body></html>

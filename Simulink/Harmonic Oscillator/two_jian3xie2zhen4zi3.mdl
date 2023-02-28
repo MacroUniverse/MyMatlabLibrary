@@ -1,0 +1,672 @@
+Model {
+  Name			  "two_jian3xie2zhen4zi3"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Sun May 30 18:48:51 2010"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Administrator"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Jun 01 19:24:37 2010"
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "50.0"
+  MaxOrder		  5
+  MaxStep		  "0.003"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  off
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "宋体"
+    FontSize		    24
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "????"
+    FontSize		    24
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "????"
+    FontSize		    24
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "two_jian3xie2zhen4zi3"
+    Location		    [0, 87, 1263, 717]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [1035, 395, 1055, 415]
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "L0(LR)"
+      Position		      [210, 290, 240, 320]
+      Value		      "3"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "L0(M)\n"
+      Position		      [285, 290, 315, 320]
+      Value		      "4"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [3, 1]
+      Position		      [1120, 180, 1130, 450]
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      Ports		      [8, 1]
+      Position		      [575, 19, 580, 251]
+      ShowName		      off
+      Inputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      Ports		      [8, 1]
+      Position		      [580, 364, 585, 596]
+      ShowName		      off
+      Inputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      Ports		      [1]
+      Position		      [1190, 144, 1220, 176]
+      Location		      [5, 63, 1371, 740]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		SelectedSignals
+	axes1			""
+      }
+      DataFormat	      "StructureWithTime"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      Position		      [1200, 295, 1260, 325]
+      VariableName	      "xyt"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Array"
+    }
+    Block {
+      BlockType		      Fcn
+      Name		      "a1"
+      Position		      [615, 120, 675, 150]
+      Expr		      "((u[1]-u[3]+u[6])*u[2]+(u[5]-u[3]-u[7])*u[8])/u"
+"[4]"
+    }
+    Block {
+      BlockType		      Fcn
+      Name		      "a2\n"
+      Position		      [620, 465, 680, 495]
+      Expr		      "((u[5]-u[6]+u[2])*u[1]+(u[8]-u[6]-u[3])*u[7])/u"
+"[4]"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "kl"
+      Position		      [75, 85, 105, 115]
+      Value		      "3"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "km"
+      Position		      [340, 290, 370, 320]
+      Value		      "80"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "kr\n"
+      Position		      [70, 510, 100, 540]
+      Value		      "3"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "left wall"
+      Position		      [80, 20, 110, 50]
+      Value		      "-5"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "m1"
+      Position		      [20, 196, 65, 234]
+      Value		      "0.1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "m2"
+      Position		      [15, 395, 45, 425]
+      Value		      "0.1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "right wall\n"
+      Position		      [70, 570, 100, 600]
+      Value		      "5"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "加速度积分1"
+      Ports		      [1, 1]
+      Position		      [745, 444, 800, 516]
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "加速度积分2"
+      Ports		      [1, 1]
+      Position		      [740, 99, 795, 171]
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "速度积分1"
+      Ports		      [1, 1]
+      Position		      [865, 444, 920, 516]
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "速度积分2"
+      Ports		      [1, 1]
+      Position		      [875, 99, 930, 171]
+      InitialCondition	      "-3"
+      ZeroCross		      off
+    }
+    Line {
+      SrcBlock		      "加速度积分1"
+      SrcPort		      1
+      DstBlock		      "速度积分1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "加速度积分2"
+      SrcPort		      1
+      DstBlock		      "速度积分2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "a1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "a1"
+      SrcPort		      1
+      DstBlock		      "加速度积分2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "left wall"
+      SrcPort		      1
+      Points		      [445, 0]
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "kl"
+      SrcPort		      1
+      Points		      [80, 0; 0, -40]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      Labels		      [3, 0]
+      SrcBlock		      "m1"
+      SrcPort		      1
+      Points		      [145, 0; 0, -95]
+      DstBlock		      "Mux1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "L0(LR)"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Labels			[2, 0]
+	Points			[0, -125]
+	DstBlock		"Mux1"
+	DstPort			6
+      }
+      Branch {
+	Points			[0, 130]
+	DstBlock		"Mux2"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "L0(M)\n"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, -95]
+	DstBlock		"Mux1"
+	DstPort			7
+      }
+      Branch {
+	Points			[0, 100]
+	DstBlock		"Mux2"
+	DstPort			2
+      }
+    }
+    Line {
+      Labels		      [1, 0]
+      SrcBlock		      "km"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	Points			[0, -70; 185, 0]
+	DstBlock		"Mux1"
+	DstPort			8
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "a2\n"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "right wall\n"
+      SrcPort		      1
+      DstBlock		      "Mux2"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "kr\n"
+      SrcPort		      1
+      Points		      [75, 0; 0, 30]
+      DstBlock		      "Mux2"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "m2"
+      SrcPort		      1
+      Points		      [180, 0; 0, 55]
+      DstBlock		      "Mux2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "a2\n"
+      SrcPort		      1
+      DstBlock		      "加速度积分1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "速度积分1"
+      SrcPort		      1
+      Points		      [85, 0; 0, -130]
+      Branch {
+	Points			[0, -35; -540, 0]
+	Branch {
+	  Points		  [0, -165]
+	  DstBlock		  "Mux1"
+	  DstPort		  5
+	}
+	Branch {
+	  Points		  [0, 210]
+	  DstBlock		  "Mux2"
+	  DstPort		  6
+	}
+      }
+      Branch {
+	Points			[95, 0]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "速度积分2"
+      SrcPort		      1
+      Points		      [20, 0; 0, 100]
+      Branch {
+	Points			[0, 40; -430, 0; 0, -20]
+	Branch {
+	  Points		  [0, 240]
+	  DstBlock		  "Mux2"
+	  DstPort		  5
+	}
+	Branch {
+	  Points		  [0, -165]
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+      }
+      Branch {
+	Points			[150, 0]
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [0, -5]
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      3
+    }
+    Annotation {
+      Name		      "v2"
+      Position		      [826, 471]
+    }
+    Annotation {
+      Name		      "s2"
+      Position		      [955, 469]
+    }
+    Annotation {
+      Name		      "v1"
+      Position		      [821, 126]
+    }
+    Annotation {
+      Name		      "s1"
+      Position		      [950, 124]
+    }
+    Annotation {
+      Name		      "1"
+      Position		      [480, 31]
+    }
+    Annotation {
+      Name		      "2"
+      Position		      [455, 58]
+    }
+    Annotation {
+      Name		      "3"
+      Position		      [510, 91]
+    }
+    Annotation {
+      Name		      "4"
+      Position		      [414, 118]
+    }
+    Annotation {
+      Name		      "5"
+      Position		      [474, 154]
+    }
+    Annotation {
+      Name		      "6"
+      Position		      [356, 179]
+    }
+    Annotation {
+      Name		      "7"
+      Position		      [328, 215]
+    }
+    Annotation {
+      Name		      "8"
+      Position		      [384, 239]
+    }
+    Annotation {
+      Name		      "1"
+      Position		      [390, 372]
+    }
+    Annotation {
+      Name		      "2"
+      Position		      [330, 404]
+    }
+    Annotation {
+      Name		      "3"
+      Position		      [356, 429]
+    }
+    Annotation {
+      Name		      "4"
+      Position		      [381, 459]
+    }
+    Annotation {
+      Name		      "5"
+      Position		      [506, 488]
+    }
+    Annotation {
+      Name		      "6"
+      Position		      [471, 516]
+    }
+    Annotation {
+      Name		      "7"
+      Position		      [468, 553]
+    }
+    Annotation {
+      Name		      "8"
+      Position		      [485, 588]
+    }
+  }
+}

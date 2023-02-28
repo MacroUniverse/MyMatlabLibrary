@@ -1,0 +1,27 @@
+</item><item>    <word>religion</word>
+    <trans><![CDATA[n. 宗教信仰；宗教]]></trans>
+    <phonetic><![CDATA[[ri'lid\j1\\e1\n]]]></phonetic>
+    <tags></tags>
+    <progress>-1</progress>
+</item><item>    <word>spec</word>
+    <trans><![CDATA[abbr. 说明书]]></trans>
+    <phonetic><![CDATA[[spek]]]></phonetic>
+    <tags></tags>
+    <progress>-1</progress>
+</item><item>    <word>rev</word>
+    <trans><![CDATA[vt.加速
+rev the engine]]></trans>
+    <phonetic><![CDATA[[rev]]]></phonetic>
+    <tags></tags>
+    <progress>-1</progress>
+</item><item>    <word>truce</word>
+    <trans><![CDATA[n. 休战；停战；
+ex. you and me, call a truce]]></trans>
+    <phonetic><![CDATA[[tru:s]]]></phonetic>
+    <tags></tags>
+    <progress>-1</progress>
+</item><item>    <word>piss</word>
+    <trans><![CDATA[vi. 小便]]></trans>
+    <phonetic><![CDATA[[pis]]]></phonetic>
+    <tags></tags>
+    <progress>-1</progress>
