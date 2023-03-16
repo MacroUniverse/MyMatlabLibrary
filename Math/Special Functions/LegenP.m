@@ -1,7 +1,7 @@
 % Legendre Polynomial Pn Coefficient
 % p(end) is the constant term
 
-function p = LegendreP(n)
+function p = LegenP(n)
 N = floor(n/2);
 p = zeros(1,n+1);
 for m = 0:N
