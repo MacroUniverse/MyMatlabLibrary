@@ -4,6 +4,9 @@
 
 function varnames = matbload(fname, varargin)
 fid = fopen(fname, 'r');
+if fid < 0
+    error(['cannot open file (doesn''t exist?): ' fname]);
+end
 end_mark = 'Matb_End_of_File';
 fseek(fid, -numel(end_mark), 'eof');
 tmp = fread(fid, [1,numel(end_mark)], '*char');
