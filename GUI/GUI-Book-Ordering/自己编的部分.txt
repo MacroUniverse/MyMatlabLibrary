@@ -1,0 +1,298 @@
+(初始化程序)
+
+if exist('buybooks.mat','file')
+    load buybooks.mat names  buy booknames bookprices%读取数据
+else
+    names={'岑伟智',  '时宏宇', '朱应', '李叙彬', '麦德平', '高旅威', '游才臻', '林文槟', '杨根', '陈许权'......
+                 '陈银州', '孙海鹰', '潘威'}';
+    buy=cell(13,1);
+    bookprices={};
+    booknames={};
+end
+
+%填写书名,价格
+Nbooks=numel(booknames);
+table1Data=cell(Nbooks,3);
+table1Data(:,1)=booknames(:);
+table1Data(:,2)=num2cell(bookprices(:));
+set(handles.table1,'Data',table1Data,'FontSize',12,'ColumnEditable',false(1,3));
+
+%填写人名,书目
+Nnames=numel(names);
+table2Data=cell(Nnames,2);
+table2Data(:,1)=names(:);
+buystr=buy;
+for ii=1:Nnames
+    buystr{ii}=num2str(buy{ii});
+end
+table2Data(:,2)=buystr(:);
+set(handles.table2,'Data',table2Data,'FontSize',12,'ColumnEditable',false(1,3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(add_button_Callback)
+
+
+
+table1Data=get(handles.table1,'Data');
+table1Data{end+1,1}='';
+set(handles.table1,'Data',table1Data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(自编子程序)
+function calculate(handles)
+%如果存在buy, 更新每本书的总数, 更新每个人的清单
+table1Data=get(handles.table1,'Data');
+table2Data=get(handles.table2,'Data');
+books=table1Data(:,1);
+bookprices=table1Data(:,2);
+buy=table2Data(:,2);
+names=table2Data(:,1);
+Nnames=size(table2Data,1);
+Nbooks=size(table1Data,1);
+%计算每本书的总数,每个人的清单
+subtotal=zeros(Nbooks,1);
+list=cell(Nnames,1);
+person_price=zeros(Nnames,1);
+for ii=1:Nnames
+    if ~isempty(buy{ii})%如果有订书
+        ind=str2num(buy{ii});
+        for jj=1:numel(ind)
+            text=[books{ind(jj)} '   '  num2str(bookprices{ind(jj)})];
+            list{ii}(jj,numel(text))=char(0);
+            list{ii}(jj,1:numel(text))=text;
+            subtotal(ind(jj))=subtotal(ind(jj))+1;
+            person_price(ii)=person_price(ii)+bookprices{ind(jj)};
+        end
+        %文本总计
+        temp=['总计:' num2str(person_price(ii))];
+        list{ii}(jj+2,1:numel(temp))=temp;
+
+        %文本标题
+        list{ii}=[char(zeros(2,size(list{ii},2))); list{ii}];
+        temp=[names{ii} '的清单:'];
+        list{ii}(1,numel(temp))=char(1);
+        list{ii}(1,1:numel(temp))=temp;
+    end
+end
+handles.list=list;
+handles.person_price=person_price;
+guidata(handles.edit,handles)
+total_price=0;
+for ii=1:Nbooks
+    table1Data{ii,3}=subtotal(ii);
+    total_price=total_price+bookprices{ii}*subtotal(ii);
+end
+table2Data(:,3)=num2cell(person_price);
+set(handles.table1,'Data',table1Data);
+set(handles.table2,'Data',table2Data);
+set(handles.text,'String',['总价' num2str(total_price)]);
+
+function show_text(handles)
+%显示第ind个人的清单
+for ii=1:13
+    eval(['val=get(handles.radiobutton' num2str(ii) ',''Value'') ']);
+    if val==1
+        set(handles.edit,'String',handles.list{ii})
+        break
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(savebutton_Callback)
+
+
+table1Data=get(handles.table1,'Data');
+table2Data=get(handles.table2,'Data');
+booknames=table1Data(:,1);
+bookpricescell=table1Data(:,2);
+Nbooks=size(table1Data,1);
+bookprices=zeros(Nbooks,1);
+for ii=1:Nbooks
+    bookprices(ii)=bookpricescell{ii};
+end
+names=table2Data(:,1);
+buystr=table2Data(:,2);
+Nnames=size(table2Data,1);
+buy=buystr;
+for ii=1:Nnames
+    buy{ii}=str2num(buystr{ii});
+end
+save buybooks booknames bookprices names buy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+( panel_SelectionChangeFcn)
+
+temp=fieldnames(handles);
+temp=strfind(temp,'list');
+for ii=1:numel(temp)
+    if temp{ii}==1
+        show_text(handles)
+        break
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(togglebutton1_Callback)
+
+buttondown=get(hObject,'Value');
+if buttondown
+    set(handles.table1,'ColumnEditable',logical([1 1 0]));
+else
+    set(handles.table1,'ColumnEditable',false(1,3));
+    table1Data=get(handles.table1,'Data');
+    Nbooks=size(table1Data,1);
+    for ii=Nbooks:-1:1 
+        if ~isempty(table1Data{ii,1})
+                table1Data=table1Data(1:ii,:);
+                break
+        end
+    end
+    set(handles.table1,'Data',table1Data);
+    calculate(handles);
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(togglebutton2_Callback)
+
+buttondown=get(hObject,'Value');
+if buttondown
+    set(handles.table2,'ColumnEditable',logical([1 1 0 1]));
+else
+    set(handles.table2,'ColumnEditable',false(1,4));
+    calculate(handles);
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
