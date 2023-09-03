@@ -1,14 +1,15 @@
-% evaluate "fr" function on a mesh in spherical coord.
+% evaluate a 3D function on a 2D mesh in spherical coord.
+% see README.txt
 % 'r' must be the grid points of 'fr'
 % one of 'th', 'ph' must be scalar, the other is a scalar or a vector
-% 'th' and 'ph' have no range limit
-% The output vars will have size [Nr,Nth] or [Nr,Nph]
+% 'th' and 'ph' have no range limit, will be wrapped
+% The outputs will have size [Nr,Nth] or [Nr,Nph]
 % use 'surfSph(R,Th,Ph,f,...)' to plot the result
 % 'scaled = true' if wave function is scaled, default is 'false'
 % when 'scaled = true' and 'r(1) = 0', "f(0)" is replaced with "mean(f(r(2)))"
 % 'rrange' (numel=2) specifies range of 'r', default is whole range.
 % 'rstep' specifies radial step length, default is 1
-% TODO: should be able to use a scalar and (th,ph) mesh
+% TODO: should be able to use a scalar r and (th,ph) mesh
 
 function [F, R, Th, Ph] = fr_eval(fr, l, m, r, th, ph, scaled, rrange, rstep)
 if ~exist('scaled','var') || isempty(scaled)

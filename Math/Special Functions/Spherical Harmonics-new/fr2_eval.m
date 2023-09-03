@@ -1,7 +1,7 @@
-% fr_eval2
-% similar to fr_eval()
+% similar to fr_eval(), see usage there
 % data(:,i) is the l(i), m(i) partial wave
 % numel(l) = numel(m) = size(data, 2), numel(r) = size(data, 1)
+
 function [F, R, Th, Ph] = fr2_eval(data, l, m, r, th, ph, scaled, rrange, rstep)
 if ~exist('scaled','var') || isempty(scaled)
     scaled = false;
