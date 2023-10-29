@@ -1,3 +1,6 @@
+% replace this file into:
+% C:\Program Files\MATLAB\R2023b\toolbox\local
+
 function p = pathdef
 %PATHDEF Search path defaults.
 %   PATHDEF returns a string that can be used as input to MATLABPATH
