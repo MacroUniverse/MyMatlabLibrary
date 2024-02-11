@@ -1,9 +1,10 @@
 % a revision of function eig
+% A*V = V*D
 % sort the eigen value matrix to descending order
 % eigen vectors change order in the same way
 % the first element of each eigen vector should be positive
 
-function [V,D]=Eig(A, order)
+function [V,D] = Eig(A, order)
 if (~exist('order','var') || isempty(order))
     order = 'descend';
 end
