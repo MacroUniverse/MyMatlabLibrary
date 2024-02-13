@@ -14,6 +14,8 @@ a=diag(D);
 D=diag(a);
 V=V(:,order);
 for ii = 1:size(V,2)
-    V(:,ii) = V(:,ii)*sign(V(1,ii));
+    if V(1,ii) < 0
+        V(:,ii) = -V(:,ii);
+    end
 end
 end
